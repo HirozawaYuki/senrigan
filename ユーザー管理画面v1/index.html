@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>user management</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <h1>User Management Page</h1>
+    <form action="" method="POST">
+      <ul>
+        <div>
+          <li>name</li>
+          <input type="text" name="name" />
+          <li>address</li>
+          <input type="text" name="address" />
+          <li>password</li>
+          <input type="password" name="password" />
+          <br />
+          <input type="password" name="passeord_2" />
+          <br /><br />
+        </div>
+
+        <div>
+          <li>attendance notice</li>
+          <input type="radio" name="attendant" value="" />Yes
+          <input type="radio" name="attendant" value="" checked />No
+          <br /><br />
+        </div>
+
+        <div>
+          <li>attend user</li>
+          <input type="checkbox" name="attend_user" value="akagi" />akagi
+          <br />
+          <input type="checkbox" name="attend_user" value="fujinaga" />fujinaga
+          <br />
+          <input type="checkbox" name="attend_user" value="wakamoto" />wakamoto
+          <br />
+          <input
+            type="checkbox"
+            name="attend_user"
+            value="takatsuka"
+          />takatsuka
+          <br />
+          <input type="checkbox" name="attend_user" value="hirozawa" />hirozawa
+        </div>
+        <br /><br />
+
+        <input type="submit" value="ok" />
+        <button type="button" onclick="">back</button>
+      </ul>
+    </form>
+    <script src="src/index.js"></script>
+  </body>
+</html>
