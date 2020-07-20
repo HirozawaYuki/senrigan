@@ -1,0 +1,110 @@
+body {
+  font-family: sans-serif;
+  margin: 0px 3% 100px 3%;
+}
+
+#system_name {
+  /* font-size: 2em; */
+  /* color: black; */
+  /* font-family: Monotype Corsiva; */
+  /* font-family: fantasy; */
+  /* font-style: italic; */
+  /* line-height: 0.3; */
+  /* text-align: center; */
+  width: 50%;
+  height: 100px;
+  margin-left: 50%;
+  margin-top: -10px;
+  margin-bottom: -30px;
+}
+
+#lab_name {
+  font-size: 30px;
+  text-align: center;
+  border: solid 2px orange;
+}
+
+.square_attendance {
+  width: 80%;
+  height: 50px;
+  background: #ff7676;
+  border: solid 2px #000;
+}
+
+.square_absent {
+  width: 80%;
+  height: 50px;
+  background: #ffffff;
+  border: solid 2px #000;
+}
+
+#attendance {
+  width: 15%;
+  height: 50px;
+  background: #ff7676;
+  border: solid 2px #000;
+  margin-top: -70px;
+  margin-left: 80%;
+}
+
+#absent {
+  width: 15%;
+  height: 50px;
+  background: #ffffff;
+  border: solid 2px #000;
+  margin-top: -70px;
+  margin-left: 80%;
+}
+
+#logout {
+  width: 45%;
+  height: 8%;
+  font-size: 1.4em;
+  left: 2%;
+  bottom: 2%;
+  background-color: black;
+  color: white;
+  position: fixed;
+  font-weight: bold;
+  border-radius: 10%;
+}
+
+#user_info {
+  width: 45%;
+  height: 8%;
+  font-size: 1.4em;
+  right: 2%;
+  bottom: 2%;
+  background-color: black;
+  color: white;
+  position: fixed;
+  font-weight: bold;
+  border-radius: 10%;
+}
+
+/* .circle1 {
+  background-color: skyblue;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  font-size: 24px;
+  position: absolute;
+}
+
+.circle2 {
+  background-color: lime;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  font-size: 24px;
+  position: absolute;
+}
+
+.circle3 {
+  background-color: red;
+  border-radius: 30px;
+  height: 90px;
+  width: 90px;
+  font-size: 24px;
+  position: absolute;
+} */

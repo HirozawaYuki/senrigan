@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user management</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <h1>User Management Page</h1>
+
+    <form action="update.php" method="POST">
+      <label for="name">name</label>
+      <div id="name"></div>
+      <label for="email">e-mail</label>
+      <div id="email"></div>
+      <label for="password">password</label>
+      <div id="password" class="wrap"></div>
+      <label for="attend">attend</label>
+      <div id="attend"></div>
+      <label for="notice_id">attend</label>
+      <div id="notice_id"></div>
+
+      <input type="submit" name="ok" value="ok"/>
+      <button type="button" onclick="">back</button>
+    </form>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>

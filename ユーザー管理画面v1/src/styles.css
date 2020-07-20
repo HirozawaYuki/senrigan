@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+}
+
+.wrap > input{
+  display: block;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
