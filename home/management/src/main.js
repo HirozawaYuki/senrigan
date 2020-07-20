@@ -1,10 +1,3 @@
-async function callApi(url, fn) {
-  const res = await fetch(url); //レスポンスを取得し、promiseを受け取る
-  const users = await res.json(); //json形式に変換
-  console.log(users);
-  fn(users); //非同期関数は必ずpromiseで返すのでコールバック関数を使用
-}
-
 //全ユーザーを表示する関数
 function showOtherUsers(users) {
   users.forEach(function (user) {
@@ -42,7 +35,7 @@ function showLoginInfo(users) {
   input_name.setAttribute("name", "name");
   input_name.setAttribute("placeholder", user.name);
   name.appendChild(input_name);
-
+  
   // メールアドレスを表示
   const email = document.getElementById("email");
   const input_email = document.createElement("input");
@@ -108,6 +101,8 @@ function showLoginInfo(users) {
   }
 }
 
-// 出席を通知できる候補ユーザー(全ユーザー)を表示
+// 出席を通知できる他のユーザーを表示
 callApi("other_user_api.php", showOtherUsers);
+
+// ログインユーザーの個人情報を表示
 callApi("login_user_api.php", showLoginInfo);

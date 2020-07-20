@@ -1,13 +1,10 @@
 <?php
-    require "../dbconnect.php";
+    require "../../dbconnect.php";
 
     session_start();
 
-    // いったん
-    $_SESSION["name"] = "Aさん";
-
-    // ログインユーザーの情報を全て取得
-    $stmt = exeSQL("SELECT * FROM user_table WHERE name = '".$_SESSION["name"]."'");
+    // 全ユーザーの情報を全て取得
+    $stmt = exeSQL("SELECT id, name FROM user_table WHERE name != '".$_SESSION["name"]."' ORDER BY id");
 
     // 全てのデータベースのデータを格納する配列を定義
     $all_data = array();

@@ -3,22 +3,16 @@ body {
   margin: 0px 3% 100px 3%;
 }
 
-#system_name {
-  /* font-size: 2em; */
-  /* color: black; */
-  /* font-family: Monotype Corsiva; */
-  /* font-family: fantasy; */
-  /* font-style: italic; */
-  /* line-height: 0.3; */
-  /* text-align: center; */
-  width: 50%;
+.system_name {
+  display: block;
+  width: 300px;
   height: 100px;
-  margin-left: 50%;
+  margin-left: auto;
   margin-top: -10px;
   margin-bottom: -30px;
 }
 
-#lab_name {
+.lab_name {
   font-size: 30px;
   text-align: center;
   border: solid 2px orange;
@@ -67,6 +61,9 @@ body {
   position: fixed;
   font-weight: bold;
   border-radius: 10%;
+
+  /* ボタンの上に来たら指マークを表示 */
+  cursor: pointer;
 }
 
 #user_info {
@@ -80,7 +77,26 @@ body {
   position: fixed;
   font-weight: bold;
   border-radius: 10%;
+
+  /* ボタンの上に来たら指マークを表示 */
+  cursor: pointer;
 }
+
+/* 管理画面に使うスタイル */
+.wrap > input{
+  display: block;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+/*  */
 
 /* .circle1 {
   background-color: skyblue;
