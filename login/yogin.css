@@ -1,0 +1,58 @@
+body {
+    background-image: url("kuretyan.png");
+    background-repeat:  no-repeat;
+    background-position:center center;
+    background-size: cover;
+    height:  100vmin;
+}
+
+td.medium_bb_t {
+    font-size: medium;
+    font-weight: bold;
+    color: #333333;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+table.headerTable{
+    width: 100%;
+    font-size: small;
+}
+
+table.welcomMessageTable {
+    width: 92%;
+    color: #ff0000;
+    text-align: center;
+    -webkit-text-shadow: 2px 2px 2px #AFAFAF;
+    text-shadow: 2px 2px 2px #AFAFAF;
+}
+
+div.login_area {
+    display: block;
+    width: 320px;
+    height: 260px;
+    background-image: url(h.png);
+    background-position:center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.login_ipbox {
+    display: block;
+    width: 320px;
+    height: 220px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
