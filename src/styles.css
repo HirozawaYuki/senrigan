@@ -23,6 +23,9 @@ body {
   height: 50px;
   background: #ff7676;
   border: solid 2px #000;
+  margin-left: 5%;
+  text-align: center;
+  font-size: xx-large;
 }
 
 .square_absent {
@@ -30,6 +33,9 @@ body {
   height: 50px;
   background: #ffffff;
   border: solid 2px #000;
+  margin-left: 5%;
+  text-align: center;
+  font-size: xx-large;
 }
 
 #attendance {
@@ -37,8 +43,10 @@ body {
   height: 50px;
   background: #ff7676;
   border: solid 2px #000;
-  margin-top: -70px;
+  margin-top: -86px;
   margin-left: 80%;
+  text-align: center;
+  font-size: xx-large;
 }
 
 #absent {
@@ -46,8 +54,10 @@ body {
   height: 50px;
   background: #ffffff;
   border: solid 2px #000;
-  margin-top: -70px;
+  margin-top: -86px;
   margin-left: 80%;
+  text-align: center;
+  font-size: xx-large;
 }
 
 #logout {
