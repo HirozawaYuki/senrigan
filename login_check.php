@@ -1,6 +1,8 @@
 <?php
     require "dbconnect.php";
 
+    session_start();
+    
     // ログインボタンを押した後の処理
     if(isset($_POST["txtID"])){
 
