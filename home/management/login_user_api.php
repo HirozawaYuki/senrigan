@@ -3,9 +3,6 @@
 
     session_start();
 
-    // いったん
-    $_SESSION["name"] = "Aさん";
-
     // ログインユーザーの情報を全て取得
     $stmt = exeSQL("SELECT * FROM user_table WHERE name = '".$_SESSION["name"]."'");
 

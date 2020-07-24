@@ -3,9 +3,6 @@
 
     session_start();
 
-    // とりあえず
-    $_SESSION["name"] = "Aさん";
-
     // OKボタンが押された時に実行する
     if (isset($_POST["ok"])) {
 
@@ -46,6 +43,7 @@
             $stmt = exeSQL("UPDATE user_table SET notice_id = '".$notice_id."' WHERE name = '".$_SESSION["name"]."'");
         }
 
+        header("Location: index.html");
     }
     
 ?>
