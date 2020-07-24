@@ -4,7 +4,7 @@
     session_start();
 
     // 全ユーザーの情報を全て取得
-    $stmt = exeSQL("SELECT id, name FROM user_table WHERE name != '".$_SESSION["name"]."' ORDER BY id");
+    $stmt = exeSQL("SELECT * FROM user_table WHERE name != '".$_SESSION["name"]."' ORDER BY id");
 
     // 全てのデータベースのデータを格納する配列を定義
     $all_data = array();

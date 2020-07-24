@@ -8,25 +8,30 @@
 
         //DB内でPOSTe-mailを検索
         try {
+          $txtID = htmlspecialchars($_POST["txtID"]);
           $stmt = exeSQL("SELECT * FROM user_table WHERE email = ?");
-          $stmt->execute([$_POST["txtID"]]);
+          $txtID = $txtID."@yamaguchi-u.ac.jp";
+          $stmt->execute([$txtID]);
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (\Exception $e) {
           echo $e->getMessage() . PHP_EOL;
         }
         
         //名前がDB内に存在しているか確認
-        if (!isset($row['email'])) {
-            echo("名前またはパスワードが間違っています");
+        if (!isset($row['name'])) {
+          header("Location: incorrect.html");
         } else {
-          //パスワード確認後sessionにメールアドレスを渡す
-          if (password_verify($_POST['txtPassWord'], $row['password'])) {
+          //パスワード確認後sessionに名前を渡す
+          $password = htmlspecialchars($_POST["txtPassWord"]);
+          if (password_verify($password, $row['password'])) {
             session_regenerate_id(true); //session_idを新しく生成し、置き換える
             $_SESSION['name'] = $row['name'];
             header("Location: home");
           } else {
-            echo("名前またはパスワードが間違っています");
+            header("Location: incorrect.html");
           }
         }
-      }
+    } else {
+      header("Location: incorrect.html");
+    }
 ?>
