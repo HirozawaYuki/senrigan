@@ -17,7 +17,7 @@
         
         //名前がDB内に存在しているか確認
         if (!isset($row['email'])) {
-            echo("名前またはパスワードが間違っています");
+          header("Location: incorrect.html");
         } else {
           //パスワード確認後sessionにメールアドレスを渡す
           if (password_verify($_POST['txtPassWord'], $row['password'])) {
@@ -25,8 +25,10 @@
             $_SESSION['name'] = $row['name'];
             header("Location: home");
           } else {
-            echo("名前またはパスワードが間違っています");
+            header("Location: incorrect.html");
           }
         }
-      }
+    } else {
+      header("Location: incorrect.html");
+    }
 ?>
