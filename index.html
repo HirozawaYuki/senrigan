@@ -7,7 +7,6 @@
 </head>
 
 <body>
-    <!-- <link rel="stylesheet" href="src/yogin.css" type="text/css"> -->
     <form action="login_check.php" method="post">
     <table id="headerTable" class="headerTable">
         <tr>
@@ -91,7 +90,7 @@
                                     <span id="lblID_lbl" style="color:black;">ＩＤ </span>
                                 </td>
                                 <td style="width:60%; text-align:left; vertical-align:middle;">
-                                    <input name="txtID" type="text" maxlength="25" id="txtID" tabindex="1" class="imeDisabled" style="font-size:Larger;height:26px;width:150px;" />
+                                    <input name="txtID" type="text" maxlength="25" id="txtID" tabindex="1" class="imeDisabled" style="font-size:Larger;height:26px;width:150px;" required/>
                                 </td>
                                 <td style="width:5%;"></td>
                             </tr>
@@ -105,7 +104,7 @@
                                     <span id="lblPassWord_lbl" style="color:black;">パスワード </span>
                                 </td>
                                 <td style="text-align:left; vertical-align:middle;">
-                                    <input name="txtPassWord" type="password" maxlength="40" id="txtPassWord" tabindex="2" class="imeDisabled" style="font-size:Larger;height:26px;width:150px;" />
+                                    <input name="txtPassWord" type="password" maxlength="40" id="txtPassWord" tabindex="2" class="imeDisabled" style="font-size:Larger;height:26px;width:150px;" required/>
                                 </td>
                                 <td></td>
                             </tr>
@@ -140,7 +139,10 @@
                     </td>
                 </tr>
     </table>
-    </form>  
+    </form>
+
+    <!-- 簡単にレコード追加をするために作成しました。あとで消します。（赤木） -->
+    <a href="register">新しくアカウントを作成</a>
 
 </body>
 </html>
