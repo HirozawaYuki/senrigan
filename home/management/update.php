@@ -21,9 +21,11 @@
 
         // パスワード変更
         if(!empty($_POST["password1"])){
-            $password1 = htmlspecialchars($_POST["password1"]);
-            $password2 = htmlspecialchars($_POST["password2"]);
+            $password1 = htmlspecialchars($_POST["password1"]); //1つ目のパスワード
+            $password2 = htmlspecialchars($_POST["password2"]); //2つ目のパスワード
             if($password1 == $password2){
+                // 管理者にパスワードが漏洩しないように、パスワードをハッシュ化してデータベースに保存
+                $password1 = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
                 $stmt = exeSQL("UPDATE user_table SET password = '".$password1."' WHERE name = '".$_SESSION["name"]."'");
             } else {
                 echo("同じパスワードを入力してください");
