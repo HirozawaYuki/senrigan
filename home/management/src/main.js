@@ -8,8 +8,8 @@ function showOtherUsers(users) {
     const li = document.createElement("li");
 
     const input = document.createElement("input");
-    input.setAttribute("type", "checkbox");
-    input.setAttribute("id", user.name);
+    input.setAttribute("type", "radio");
+    input.setAttribute("id", user.id);
     input.setAttribute("name", "notice_id");
     input.setAttribute("value", user.id);
     li.appendChild(input);
@@ -35,7 +35,7 @@ function showLoginInfo(users) {
   input_name.setAttribute("name", "name");
   input_name.setAttribute("placeholder", user.name);
   name.appendChild(input_name);
-  
+
   // メールアドレスを表示
   const email = document.getElementById("email");
   const input_email = document.createElement("input");
@@ -49,15 +49,17 @@ function showLoginInfo(users) {
   const input_pswd1 = document.createElement("input");
   input_pswd1.setAttribute("type", "password");
   input_pswd1.setAttribute("name", "password1");
+  input_pswd1.setAttribute("placeholder", "Password");
   pswd.appendChild(input_pswd1);
 
   // パスワード入力欄2を表示
   const input_pswd2 = document.createElement("input");
   input_pswd2.setAttribute("type", "password");
   input_pswd2.setAttribute("name", "password2");
+  input_pswd2.setAttribute("placeholder", "Password");
   pswd.appendChild(input_pswd2);
 
-  // 通知がONであればYes, OFFであればNoにチェックを入れる
+  // 通知がONであればon, OFFであればNoにチェックを入れる
   const attend = document.getElementById("attend");
 
   const ul = document.createElement("ul");
@@ -66,13 +68,13 @@ function showLoginInfo(users) {
   const input_attend1 = document.createElement("input");
   input_attend1.setAttribute("type", "radio");
   input_attend1.setAttribute("name", "attend");
-  input_attend1.setAttribute("id", "yes");
+  input_attend1.setAttribute("id", "on");
   input_attend1.setAttribute("value", "1");
   li1.appendChild(input_attend1);
 
   const label1 = document.createElement("label");
-  label1.setAttribute("for", "yes");
-  label1.textContent = "yes";
+  label1.setAttribute("for", "on");
+  label1.textContent = "ON";
   li1.appendChild(label1);
   ul.appendChild(li1);
 
@@ -80,25 +82,31 @@ function showLoginInfo(users) {
   const input_attend2 = document.createElement("input");
   input_attend2.setAttribute("type", "radio");
   input_attend2.setAttribute("name", "attend");
-  input_attend2.setAttribute("id", "no");
+  input_attend2.setAttribute("id", "off");
   input_attend2.setAttribute("value", "0");
   li2.appendChild(input_attend2);
 
   const label2 = document.createElement("label");
-  label2.setAttribute("for", "no");
-  label2.textContent = "no";
+  label2.setAttribute("for", "off");
+  label2.textContent = "OFF";
   li2.appendChild(label2);
   ul.appendChild(li2);
 
   attend.appendChild(ul);
 
-  const yes = document.getElementById("yes");
-  const no = document.getElementById("no");
+  // ログインユーザーが設定している方の通知設定ボタンにチェックを入れる
+  const on = document.getElementById("on");
+  const off = document.getElementById("off");
   if (user.attend == 0) {
-    no.checked = true;
+    off.checked = true;
   } else if (user.attend == 1) {
-    yes.checked = true;
+    on.checked = true;
   }
+
+  // ログインユーザーが設定している通知ユーザーにチェックを入れる
+  const notice_user = document.getElementById(user.notice_id);
+  notice_user.checked = true;
+
 }
 
 // 出席を通知できる他のユーザーを表示
