@@ -19,7 +19,7 @@
     }
     //セッションクリア
     @session_destroy();
-    //haro-
+    //haro-ooooo
 
     header("Location: ../index.html");
 ?>
