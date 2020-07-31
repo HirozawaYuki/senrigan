@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   margin: 0px 3% 100px 3%;
+  background: #b8b2ea
 }
 
 .system_name {
@@ -21,7 +22,7 @@ body {
 .square_attendance {
   width: 80%;
   height: 50px;
-  background: #ff7676;
+  background: white;
   border: solid 2px #000;
   margin-left: 5%;
   text-align: center;
@@ -31,7 +32,8 @@ body {
 .square_absent {
   width: 80%;
   height: 50px;
-  background: #ffffff;
+  color: #fff;
+  background-color: #9D9D9D;
   border: solid 2px #000;
   margin-left: 5%;
   text-align: center;
@@ -41,7 +43,7 @@ body {
 #attendance {
   width: 15%;
   height: 50px;
-  background: #ff7676;
+  background: white;
   border: solid 2px #000;
   margin-top: -86px;
   margin-left: 80%;
@@ -52,7 +54,8 @@ body {
 #absent {
   width: 15%;
   height: 50px;
-  background: #ffffff;
+  background: #9d9d9d;
+  color: #fff;
   border: solid 2px #000;
   margin-top: -86px;
   margin-left: 80%;
@@ -71,8 +74,6 @@ body {
   position: fixed;
   font-weight: bold;
   border-radius: 10%;
-
-  /* ボタンの上に来たら指マークを表示 */
   cursor: pointer;
 }
 
@@ -87,8 +88,6 @@ body {
   position: fixed;
   font-weight: bold;
   border-radius: 10%;
-
-  /* ボタンの上に来たら指マークを表示 */
   cursor: pointer;
 }
 
