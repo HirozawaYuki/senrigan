@@ -19,6 +19,7 @@
     }
     //セッションクリア
     @session_destroy();
+    //haro-
 
     header("Location: ../index.html");
 ?>
