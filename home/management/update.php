@@ -13,10 +13,10 @@
             $_SESSION["name"] = $name;
         }
 
-        // e-mail変更
-        if(!empty($_POST["email"])){
-            $email = htmlspecialchars($_POST["email"]); //変更後のname
-            $stmt = exeSQL("UPDATE user_table SET email = '".$email."' WHERE name = '".$_SESSION["name"]."'");
+        // slack ID変更
+        if(!empty($_POST["slack_id"])){
+            $slack_id = htmlspecialchars($_POST["slack_id"]); //変更後のname
+            $stmt = exeSQL("UPDATE user_table SET slack_id = '".$slack_id."' WHERE name = '".$_SESSION["name"]."'");
         }
 
         // パスワード変更
@@ -45,7 +45,7 @@
             $stmt = exeSQL("UPDATE user_table SET notice_id = '".$notice_id."' WHERE name = '".$_SESSION["name"]."'");
         }
 
-        header("Location: index.html");
+        header("Location: ../index.html");
     }
     
 ?>

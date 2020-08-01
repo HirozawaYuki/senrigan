@@ -37,12 +37,12 @@ function showLoginInfo(users) {
   name.appendChild(input_name);
 
   // メールアドレスを表示
-  const email = document.getElementById("email");
-  const input_email = document.createElement("input");
-  input_email.setAttribute("type", "email");
-  input_email.setAttribute("name", "email");
-  input_email.setAttribute("placeholder", user.email);
-  email.appendChild(input_email);
+  const slack_id = document.getElementById("slack_id");
+  const input_slack_id = document.createElement("input");
+  input_slack_id.setAttribute("type", "slack_id");
+  input_slack_id.setAttribute("name", "slack_id");
+  input_slack_id.setAttribute("placeholder", user.slack_id);
+  slack_id.appendChild(input_slack_id);
 
   // パスワード入力欄1を表示
   const pswd = document.getElementById("password");
@@ -106,7 +106,6 @@ function showLoginInfo(users) {
   // ログインユーザーが設定している通知ユーザーにチェックを入れる
   const notice_user = document.getElementById(user.notice_id);
   notice_user.checked = true;
-
 }
 
 // 出席を通知できる他のユーザーを表示
