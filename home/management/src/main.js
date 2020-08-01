@@ -60,14 +60,14 @@ function showLoginInfo(users) {
   pswd.appendChild(input_pswd2);
 
   // 通知がONであればon, OFFであればNoにチェックを入れる
-  const attend = document.getElementById("attend");
+  const notice = document.getElementById("notice");
 
   const ul = document.createElement("ul");
 
   const li1 = document.createElement("li");
   const input_attend1 = document.createElement("input");
   input_attend1.setAttribute("type", "radio");
-  input_attend1.setAttribute("name", "attend");
+  input_attend1.setAttribute("name", "notice");
   input_attend1.setAttribute("id", "on");
   input_attend1.setAttribute("value", "1");
   li1.appendChild(input_attend1);
@@ -81,7 +81,7 @@ function showLoginInfo(users) {
   const li2 = document.createElement("li");
   const input_attend2 = document.createElement("input");
   input_attend2.setAttribute("type", "radio");
-  input_attend2.setAttribute("name", "attend");
+  input_attend2.setAttribute("name", "notice");
   input_attend2.setAttribute("id", "off");
   input_attend2.setAttribute("value", "0");
   li2.appendChild(input_attend2);
@@ -92,14 +92,14 @@ function showLoginInfo(users) {
   li2.appendChild(label2);
   ul.appendChild(li2);
 
-  attend.appendChild(ul);
+  notice.appendChild(ul);
 
   // ログインユーザーが設定している方の通知設定ボタンにチェックを入れる
   const on = document.getElementById("on");
   const off = document.getElementById("off");
-  if (user.attend == 0) {
+  if (user.notice == 0) {
     off.checked = true;
-  } else if (user.attend == 1) {
+  } else if (user.notice == 1) {
     on.checked = true;
   }
 

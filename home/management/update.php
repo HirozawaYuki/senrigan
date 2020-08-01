@@ -34,9 +34,9 @@
 
         // 通知ON/OFFの変更
         // emptyを使うとnoを送信したときにif文に入れないのでissetを使用
-        if(isset($_POST["attend"])){
-            $attend = htmlspecialchars($_POST["attend"]);
-            $stmt = exeSQL("UPDATE user_table SET attend = '".$attend."' WHERE name = '".$_SESSION["name"]."'");
+        if(isset($_POST["notice"])){
+            $notice = htmlspecialchars($_POST["notice"]);
+            $stmt = exeSQL("UPDATE user_table SET notice = '".$notice."' WHERE name = '".$_SESSION["name"]."'");
         }
 
         // 通知するユーザーの変更
