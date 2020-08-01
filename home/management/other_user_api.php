@@ -3,7 +3,7 @@
 
     session_start();
 
-    // 全ユーザーの情報を全て取得
+    // ログインユーザー以外のユーザーの情報を全て取得
     $stmt = exeSQL("SELECT * FROM user_table WHERE name != '".$_SESSION["name"]."' ORDER BY id");
 
     // 全てのデータベースのデータを格納する配列を定義

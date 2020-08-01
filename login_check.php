@@ -4,14 +4,13 @@
     session_start();
     
     // ログインボタンを押した後の処理
-    if(isset($_POST["txtID"])){
+    if(isset($_POST["txtName"])){
 
         //DB内でPOSTe-mailを検索
         try {
-          $txtID = htmlspecialchars($_POST["txtID"]);
-          $stmt = exeSQL("SELECT * FROM user_table WHERE email = ?");
-          $txtID = $txtID."@yamaguchi-u.ac.jp";
-          $stmt->execute([$txtID]);
+          $txtName = htmlspecialchars($_POST["txtName"]);
+          $stmt = exeSQL("SELECT * FROM user_table WHERE name = ?");
+          $stmt->execute([$txtName]);
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (\Exception $e) {
           echo $e->getMessage() . PHP_EOL;

@@ -37,12 +37,12 @@ function showLoginInfo(users) {
   name.appendChild(input_name);
 
   // メールアドレスを表示
-  const email = document.getElementById("email");
-  const input_email = document.createElement("input");
-  input_email.setAttribute("type", "email");
-  input_email.setAttribute("name", "email");
-  input_email.setAttribute("placeholder", user.email);
-  email.appendChild(input_email);
+  const slack_id = document.getElementById("slack_id");
+  const input_slack_id = document.createElement("input");
+  input_slack_id.setAttribute("type", "slack_id");
+  input_slack_id.setAttribute("name", "slack_id");
+  input_slack_id.setAttribute("placeholder", user.slack_id);
+  slack_id.appendChild(input_slack_id);
 
   // パスワード入力欄1を表示
   const pswd = document.getElementById("password");
@@ -60,14 +60,14 @@ function showLoginInfo(users) {
   pswd.appendChild(input_pswd2);
 
   // 通知がONであればon, OFFであればNoにチェックを入れる
-  const attend = document.getElementById("attend");
+  const notice = document.getElementById("notice");
 
   const ul = document.createElement("ul");
 
   const li1 = document.createElement("li");
   const input_attend1 = document.createElement("input");
   input_attend1.setAttribute("type", "radio");
-  input_attend1.setAttribute("name", "attend");
+  input_attend1.setAttribute("name", "notice");
   input_attend1.setAttribute("id", "on");
   input_attend1.setAttribute("value", "1");
   li1.appendChild(input_attend1);
@@ -81,7 +81,7 @@ function showLoginInfo(users) {
   const li2 = document.createElement("li");
   const input_attend2 = document.createElement("input");
   input_attend2.setAttribute("type", "radio");
-  input_attend2.setAttribute("name", "attend");
+  input_attend2.setAttribute("name", "notice");
   input_attend2.setAttribute("id", "off");
   input_attend2.setAttribute("value", "0");
   li2.appendChild(input_attend2);
@@ -92,21 +92,20 @@ function showLoginInfo(users) {
   li2.appendChild(label2);
   ul.appendChild(li2);
 
-  attend.appendChild(ul);
+  notice.appendChild(ul);
 
   // ログインユーザーが設定している方の通知設定ボタンにチェックを入れる
   const on = document.getElementById("on");
   const off = document.getElementById("off");
-  if (user.attend == 0) {
+  if (user.notice == 0) {
     off.checked = true;
-  } else if (user.attend == 1) {
+  } else if (user.notice == 1) {
     on.checked = true;
   }
 
   // ログインユーザーが設定している通知ユーザーにチェックを入れる
   const notice_user = document.getElementById(user.notice_id);
   notice_user.checked = true;
-
 }
 
 // 出席を通知できる他のユーザーを表示

@@ -5,9 +5,9 @@
 
         if (isset($_POST['register'])) {
             // 未入力のデータがない場合
-            if ((!empty($_POST["name"])&&(!empty($_POST["email"]))&&(!empty($_POST["password"])))) {
+            if ((!empty($_POST["name"])&&(!empty($_POST["slack_id"]))&&(!empty($_POST["password"])))) {
                 $name = htmlspecialchars($_POST['name']);
-                $email = htmlspecialchars($_POST['email']);
+                $slack_id = htmlspecialchars($_POST['slack_id']);
                 $password = htmlspecialchars($_POST['password']);
                 $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
                 // // パスワードをハッシュ値に変換してデータベースに保存
@@ -27,12 +27,12 @@
                 } else {
 
                   // テーブル"user_table"に名前・e-mail・パスワードを追加
-                  $stmt = exeSQL("INSERT INTO user_table (name,email,password) values ('".$name."','".$email."','".$password."')");
+                  $stmt = exeSQL("INSERT INTO user_table (name,slack_id,password) values ('".$name."','".$slack_id."','".$password."')");
                   
                   $_SESSION['name'] = $name;
 
                   print($name);
-                  print($email);
+                  print($slack_id);
                   print($password);
 
                   header("location: ../home");
