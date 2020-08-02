@@ -1,9 +1,17 @@
 body {
-  /* background-image: url("../img/kuretyan.png"); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   height: 100vmin;
+  position: relative;
+}
+
+.graph {
+  width: 100%;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  
 }
 
 td.medium_bb_t {
@@ -119,6 +127,7 @@ div.login_ipbox {
     /* background: red; */
   }
 }
+
 
 /* 
 .bigSquare {

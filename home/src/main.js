@@ -28,6 +28,7 @@ function showUsers(users){
     
     for (var num = 0; num < member_concat.length; num++) {
       // createElement:タグの生成　<button></button>
+      var div = document.createElement("div")
       var p1 = document.createElement("p");
       var p2 = document.createElement("p");
       // innerHTMLを用いることで要素の中身を変更することができる
@@ -47,8 +48,12 @@ function showUsers(users){
         p2.setAttribute("id", "absent");
       }
       //appendChild:HTMLに設定済みのタグを挿入
-      document.getElementById("main").appendChild(p1);
-      document.getElementById("main").appendChild(p2);
+      // document.getElementById("main").appendChild(p1);
+      // document.getElementById("main").appendChild(p2);
+      div.setAttribute("class","wrap")
+      div.appendChild(p1);
+      div.appendChild(p2);
+      document.getElementById("main").appendChild(div);
       var left_pos = 5;
       var top_pos = 100;
       document.getElementById(num).style.left = "" + left_pos + "%";
