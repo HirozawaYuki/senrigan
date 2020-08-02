@@ -60,6 +60,6 @@ function showUsers(users){
     }
     
   }
-  
+  //a
   // Ajaxでデータベース内のユーザーをディスプレイに表示する
   callApi("all_user_api.php",showUsers);
