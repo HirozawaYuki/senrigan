@@ -6,7 +6,7 @@
     $_SESSION["id"] = 1;
 
     // ログインユーザーの情報を全て取得
-    $stmt = exeSQL("SELECT * FROM week_table WHERE id = '".$_SESSION["id"]."'");
+    $stmt = exeSQL("SELECT * FROM count_table WHERE id = '".$_SESSION["id"]."'");
 
     // 全てのデータベースのデータを格納する配列を定義
     $all_data = array();
