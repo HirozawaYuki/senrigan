@@ -31,6 +31,7 @@ function showUsers(users){
       var div = document.createElement("div")
       var p1 = document.createElement("p");
       var p2 = document.createElement("p");
+      var b1 = document.createElement("button");
       // innerHTMLを用いることで要素の中身を変更することができる
       p1.innerHTML = member_concat[num];
       // setAttribute:タグの属性の設定
@@ -47,13 +48,12 @@ function showUsers(users){
         p2.innerHTML = "不在";
         p2.setAttribute("id", "absent");
       }
+      b1.setAttribute("id","button");
+      b1.innerHTML="";
       //appendChild:HTMLに設定済みのタグを挿入
-      // document.getElementById("main").appendChild(p1);
-      // document.getElementById("main").appendChild(p2);
-      div.setAttribute("class","wrap")
-      div.appendChild(p1);
-      div.appendChild(p2);
-      document.getElementById("main").appendChild(div);
+      document.getElementById("main").appendChild(p1);
+      document.getElementById("main").appendChild(p2);
+      document.getElementById("main").appendChild(b1);
       var left_pos = 5;
       var top_pos = 100;
       document.getElementById(num).style.left = "" + left_pos + "%";
@@ -61,6 +61,6 @@ function showUsers(users){
     }
     
   }
-  
+  //a
   // Ajaxでデータベース内のユーザーをディスプレイに表示する
   callApi("all_user_api.php",showUsers);
