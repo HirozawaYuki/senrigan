@@ -10,7 +10,7 @@ function drowGraph(colors) {
     rect.setAttribute("x",(i)*15+"%");
     rect.setAttribute("y","0%");
     rect.setAttribute("width","10%");
-    rect.setAttribute("height","100%");
+    rect.setAttribute("height",colors[i].count+"%");
     rect.setAttribute("fill","rgb("+colors[i].r+","+colors[i].g+","+colors[i].b+")");
     bar.appendChild(rect);
   }
