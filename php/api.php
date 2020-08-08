@@ -13,14 +13,20 @@
       case "user":
         $stmt = exeSQL("SELECT name, attend FROM user_table");
         break;
-      case "color":
-        $stmt = exeSQL("SELECT * FROM date_color_table ORDER BY date DESC");
-        break;
-      case "count":
+      case "personal_count":
         $stmt = exeSQL("SELECT * FROM date_count_table ORDER BY date DESC");
         break;
       case "color_and_count":
         $stmt = exeSQL("SELECT * FROM date_color_table INNER JOIN date_count_table ON date_color_table.date = date_count_table.date ORDER BY date_color_table.date DESC");
+        break;
+      case "time":
+        $stmt = exeSQL("SELECT * FROM login_time_table");
+        break;
+      case "other_user_name":
+        $stmt = exeSQL("SELECT * FROM user_table WHERE name != '".$_SESSION["name"]."' ORDER BY id");
+        break;
+      case "login_user":
+        $stmt = exeSQL("SELECT * FROM user_table WHERE name = '".$_SESSION["name"]."'");
         break;
       default:
         throw new RuntimeException("invalid value...");
