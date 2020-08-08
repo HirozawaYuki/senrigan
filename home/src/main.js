@@ -24,7 +24,7 @@ function showUsers(users){
       }
     }
 
-    //時間の表示
+    //現在時刻の取得
     var date=new Date();
     var hour=date.getHours();
 
@@ -90,3 +90,4 @@ function showUsers(users){
   //a
   // Ajaxでデータベース内のユーザーをディスプレイに表示する
   callApi("all_user_api.php",showUsers);
+  

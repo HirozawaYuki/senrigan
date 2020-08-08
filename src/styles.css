@@ -100,7 +100,7 @@ body {
   height: 27px;
   position: absolute;
   background: white;
-  border: solid 2px #fff;
+  border: none;
   margin-top: -86px;
   margin-left: 71%;
   text-align: center;
@@ -113,12 +113,12 @@ body {
 }
 
 .log_time {
-  width: 15.2%;
-  height: 26.6px;
+  width: 15%;
+  height: 26px;
   background: white;
   border: solid 2px #fff;
   margin-top: -62px;
-  margin-left: 75.5%;
+  margin-left: 75.9%;
   text-align: center;
   font-size: large;
 }
