@@ -8,12 +8,12 @@ body {
   display: block;
   width: 300px;
   height: 100px;
-  margin-left: auto;
+  margin-right: auto;
   margin-top: -10px;
   margin-bottom: -30px;
 }
 
-.flex_container {
+#flex_container{
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -22,13 +22,6 @@ body {
   align-content: stretch;
 }
 
-.flex_item {
-  order: 0;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-}
 
 .lab_name {
   font-size: 30px;
@@ -36,23 +29,36 @@ body {
   border: solid 2px orange;
 }
 
+.user_color {
+  width: 5%;
+  height: 50px;
+  /* background: white; */
+  border: solid 2px #fff;
+  /* margin-top: -20px; */
+  margin-left: 5%;
+}
+
 .square_attendance {
-  width: 60%;
+  width: 50%;
   height: 50px;
   background: white;
-  border: solid 2px #000;
-  margin-left: 5%;
+  border: solid 2px #fff;
+  margin-top: -70px;
+  margin-left: 10%;
   text-align: center;
   font-size: xx-large;
 }
 
+
 .square_absent {
-  width: 60%;
+  width: 50%;
   height: 50px;
   color: #fff;
-  background-color: #9d9d9d;
-  border: solid 2px #000;
-  margin-left: 5%;
+  background-color: #040144;
+  border: solid 2px #040144;
+  margin-top: -70px;
+  /* margin-top: -86px; */
+  margin-left: 10%;
   text-align: center;
   font-size: xx-large;
 }
@@ -61,39 +67,60 @@ body {
   width: 15%;
   height: 50px;
   background: white;
-  border: solid 2px #000;
+  border: solid 2px #fff;
   margin-top: -86px;
+  /* margin-top: -86px; */
   margin-left: 60%;
   text-align: center;
   font-size: xx-large;
+  background-image: url("./../img/in.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
-#button {
-  width: 15%;
-  height: 50px;
-  background: white;
-  border: solid 2px #000;
-  margin-top: -86px;
-  margin-left: 80%;
-  text-align: center;
-  font-size: xx-large;
-  white-space: normal;
-}
-
-/* .wrap {
-  display: inline-flex;
-} */
 
 #absent {
   width: 15%;
   height: 50px;
-  background: #9d9d9d;
+  background: #040144;
   color: #fff;
-  border: solid 2px #000;
+  border: solid 2px #040144;
   margin-top: -86px;
+  /* margin-top: -86px; */
   margin-left: 60%;
   text-align: center;
   font-size: xx-large;
+  background-image: url("./../img/out.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#button {
+  width: 15%;
+  height: 27px;
+  position: absolute;
+  background: white;
+  border: none;
+  margin-top: -86px;
+  margin-left: 71%;
+  text-align: center;
+  font-size: xx-large;
+  white-space: normal;
+  background-image: url("./../img/graph.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.log_time {
+  width: 15%;
+  height: 26px;
+  background: white;
+  border: solid 2px #fff;
+  margin-top: -62px;
+  margin-left: 75.9%;
+  text-align: center;
+  font-size: large;
 }
 
 #logout {
@@ -108,20 +135,9 @@ body {
   font-weight: bold;
   border-radius: 10%;
   cursor: pointer;
-}
-
-#logout_img {
-  width: 45%;
-  height: 8%;
-  font-size: 1.4em;
-  left: 2%;
-  bottom: 2%;
-  background-color: black;
-  color: white;
-  position: fixed;
-  font-weight: bold;
-  border-radius: 10%;
-  cursor: pointer;
+  background-image: url("./../img/logout.png");
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 #user_info {
@@ -136,21 +152,11 @@ body {
   font-weight: bold;
   border-radius: 10%;
   cursor: pointer;
+  background-image: url("./../img/setting.png");
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
-#user_info_img {
-  width: 45%;
-  height: 8%;
-  font-size: 1.4em;
-  right: 2%;
-  bottom: 2%;
-  background-color: black;
-  color: white;
-  position: fixed;
-  font-weight: bold;
-  border-radius: 10%;
-  cursor: pointer;
-}
 
 /* 管理画面に使うスタイル */
 .wrap > input {
