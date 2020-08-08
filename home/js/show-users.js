@@ -11,7 +11,6 @@ function showUsers(users){
   for (var human = 0; human < users.length; human++) {
 
     const attend = users[human].attend;
-    console.log(attend);
 
     if (attend == 1) {
       check_attendance === "square_attendance";

@@ -10,9 +10,11 @@
     }
 
     switch ($_GET["type"]) {
+      // ユーザーに関する全情報を取得する
       case "user":
-        $stmt = exeSQL("SELECT name, attend FROM user_table");
-        break;
+        $stmt = exeSQL("SELECT * FROM ((personal_color_table a
+        INNER JOIN personal_count_table b ON a.id = b.id) INNER JOIN user_table c ON a.id = c.id) INNER JOIN last_login_table d ON a.id = d.id");
+      break;
       case "personal_count":
         $stmt = exeSQL("SELECT * FROM date_count_table ORDER BY date DESC");
         break;
