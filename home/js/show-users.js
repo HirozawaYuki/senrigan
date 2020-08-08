@@ -1,7 +1,11 @@
 // 全ユーザーの名前・在室状況を表示する関数
 function showUsers(users){
   
-  /*在室者と不在者に一旦リストを分ける*/
+  users.forEach(user => {
+    
+  });
+
+  /*在室者と不在者にを分ける*/
   var attendance_list = [];
   var attend_num = 0;
   var absent_list = [];
