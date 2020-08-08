@@ -12,7 +12,7 @@
     switch ($_GET["type"]) {
       // ユーザーに関する全情報を取得する
       case "user":
-        $stmt = exeSQL("SELECT * FROM (personal_color_table a
+        $stmt = exeSQL("SELECT * FROM (id_color_table a
         INNER JOIN user_table c ON a.id = c.id) INNER JOIN last_login_table d ON a.id = d.id");
         // INNER JOIN personal_count_table b ON a.id = b.id) 
       break;
