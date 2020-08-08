@@ -24,6 +24,10 @@ function showUsers(users){
       }
     }
 
+    //時間の表示
+    var date=new Date();
+    var hour=date.getHours();
+
     var color_list=["red","green","blue","red","blue","green"];
     
     var member_concat = attendance_list.concat(absent_list); //在室者がリストの先頭に来るようにリストを結合
@@ -35,13 +39,16 @@ function showUsers(users){
       var p1 = document.createElement("p");
       var p2 = document.createElement("p");
       var b1 = document.createElement("button");
+
+      var p_time=document.createElement("p");
+
       // innerHTMLを用いることで要素の中身を変更することができる
       p1.innerHTML = member_concat[num];
       // setAttribute:タグの属性の設定
       p1.setAttribute("id", num);
       // var check_attendance = decision_class();
       div.setAttribute("class","flex_container");
-      
+
       /*在室者は前半に置いてあるはずなので、総在室者の数に達するまでは在室として定義*/
       if (attend_num > num) {
         p1.setAttribute("class", "square_attendance");
@@ -53,7 +60,11 @@ function showUsers(users){
         p2.setAttribute("id", "absent");
       }
       b1.setAttribute("id","button");
-      b1.innerHTML="";
+      //b1.innerHTML="";
+
+      //時間の表示
+      p_time.innerHTML=hour.toString()+"時間前";
+      p_time.setAttribute("class","log_time");
 
       p0.setAttribute("class","user_color");
       p0.setAttribute("style","background-color:"+color_list[num]+"");
@@ -64,6 +75,7 @@ function showUsers(users){
       div.appendChild(p1);
       div.appendChild(p2);
       div.appendChild(b1);
+      div.appendChild(p_time);
       // document.getElementById("main").appendChild(p1);
       // document.getElementById("main").appendChild(p2);
       // document.getElementById("main").appendChild(b1);
@@ -72,6 +84,7 @@ function showUsers(users){
       document.getElementById(num).style.left = "" + left_pos + "%";
       document.getElementById(num).style.top = "" + top_pos + "px";
     }
+    //document.getElementById("main").appendChild(p_time);
     
   }
   //a
