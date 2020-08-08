@@ -31,7 +31,7 @@ body {
 
 .user_color {
   width: 5%;
-  height: 50px;
+  height: 53px;
   /* background: white; */
   border: solid 2px #fff;
   /* margin-top: -20px; */
@@ -99,6 +99,7 @@ body {
   position: absolute;
   background: white;
   border: none;
+  
   margin-top: -86px;
   margin-left: 71%;
   text-align: center;
@@ -115,8 +116,10 @@ body {
   height: 26px;
   background: white;
   border: solid 2px #fff;
+  margin: 0px;
+  padding: 0px;
   margin-top: -62px;
-  margin-left: 75.9%;
+  margin-left: 76%;
   text-align: center;
   font-size: large;
 }
