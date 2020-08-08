@@ -93,33 +93,64 @@ body {
 }
 
 
-#button {
-  width: 15%;
+#attend_button {
+  width: 16%;
   height: 27px;
   position: absolute;
   background: white;
   border: none;
   
   margin-top: -86px;
-  margin-left: 71%;
+  margin-left: 70.1%;
   text-align: center;
   font-size: xx-large;
   white-space: normal;
-  background-image: url("./../img/graph.png");
+  background-image: url("./../img/attend_graph.png");
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
-.log_time {
-  width: 15%;
+#absent_button {
+  width: 16%;
+  height: 27px;
+  position: absolute;
+  background: white;
+  border: none;
+  
+  margin-top: -86px;
+  margin-left: 70.1%;
+  text-align: center;
+  font-size: xx-large;
+  white-space: normal;
+  background-color: #040144;
+  background-image: url("./../img/absent_graph.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#log_attend_time {
+  width: 16%;
   height: 26px;
   background: white;
   border: solid 2px #fff;
   margin: 0px;
   padding: 0px;
   margin-top: -62px;
-  margin-left: 76%;
+  margin-left: 75%;
+  text-align: center;
+  font-size: large;
+}
+
+#log_absent_time{
+  width: 16%;
+  height: 26px;
+  color: white;
+  background: #040144;
+  border: solid 2px #040144;
+  margin: 0px;
+  padding: 0px;
+  margin-top: -62px;
+  margin-left: 75%;
   text-align: center;
   font-size: large;
 }

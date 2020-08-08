@@ -75,10 +75,10 @@ function showUsers(users){
     var p0 = document.createElement("p");
     var p1 = document.createElement("p");
     var p2 = document.createElement("p");
-    var b1 = document.createElement("button");
-    
+    var button = document.createElement("button");
 
-    var p_time=document.createElement("p");
+    var p_attend_time=document.createElement("p");
+    var p_absent_time=document.createElement("p");
 
     // innerHTMLを用いることで要素の中身を変更することができる
     p1.innerHTML = member_concat[num];
@@ -92,17 +92,25 @@ function showUsers(users){
       p1.setAttribute("class", "square_attendance");
       // p2.innerHTML = "在室";
       p2.setAttribute("id", "attendance");
+
+      //時間の表示
+    p_attend_time.innerHTML=(tiem_list[num].toString())+"時間前";
+    p_attend_time.setAttribute("id","log_attend_time");
+      //グラフの表示
+      button.setAttribute("id","attend_button");
     } else {
       p1.setAttribute("class", "square_absent");
       // p2.innerHTML = "不在";
       p2.setAttribute("id", "absent");
-    }
-    b1.setAttribute("id","button");
-    //b1.innerHTML="";
 
-    //時間の表示
-    p_time.innerHTML=(tiem_list[num].toString())+"時間前";
-    p_time.setAttribute("class","log_time");
+      //時間の表示
+    p_absent_time.innerHTML=(tiem_list[num].toString())+"時間前";
+    p_absent_time.setAttribute("id","log_absent_time");
+
+    //グラフの表示
+    button.setAttribute("id","absent_button");
+    }
+    //b1.innerHTML="";
 
     p0.setAttribute("class","user_color");
     p0.setAttribute("style","background-color:rgb("+color_list_r[num]+","+color_list_g[num]+","+color_list_b[num]+"); border:thin solid rgb("+color_list_r[num]+","+color_list_g[num]+","+color_list_b[num]+")");
@@ -112,8 +120,9 @@ function showUsers(users){
     div.appendChild(p0);
     div.appendChild(p1);
     div.appendChild(p2);
-    div.appendChild(b1);
-    div.appendChild(p_time);
+    div.appendChild(button);
+    div.appendChild(p_attend_time);
+    div.appendChild(p_absent_time);
     // document.getElementById("main").appendChild(p1);
     // document.getElementById("main").appendChild(p2);
     // document.getElementById("main").appendChild(b1);
