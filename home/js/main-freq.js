@@ -1,0 +1,1 @@
+callApi("week_api.php", graph);

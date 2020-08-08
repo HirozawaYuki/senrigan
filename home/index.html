@@ -10,17 +10,17 @@
     <img class="system_name" src="../img/Senrigan.png" />
     <h1 class="lab_name">アンチプログラミング研究室</h1>
     <div id="main"></div>
-    <div class="flex_container">
-      <div>
+      <div class="flex_container">
         <button id="logout" onclick="location.href='logout.php'">ログアウト</button>
-        <img id="logout_img" src="../img/logout.png">
+        <img id="logout_img" src="../img/logout.png" onclick="location.href='logout.php'">
       </div>
       <div>
         <button id="user_info" onclick="location.href='management'">ユーザ管理</button>
-        <img id="user_info_img" src="../img/setting.png">
+        <img id="user_info_img" src="../img/setting.png" onclick="location.href='management'">
       </div>
     </div>
-    <script src="../src/call-api.js"></script>
-    <script src="src/main.js"></script>
+    <script src="../js/call-api.js"></script>
+    <script src="js/show-users.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

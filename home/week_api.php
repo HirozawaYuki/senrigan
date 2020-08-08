@@ -3,8 +3,10 @@
 
     session_start();
 
-    // 全ユーザーの名前・出席情報を全て取得
-    $stmt = exeSQL("SELECT name, attend FROM user_table WHERE 1");
+    $_SESSION["id"] = 1;
+
+    // ログインユーザーの情報を全て取得
+    $stmt = exeSQL("SELECT * FROM count_table WHERE id = '".$_SESSION["id"]."'");
 
     // 全てのデータベースのデータを格納する配列を定義
     $all_data = array();

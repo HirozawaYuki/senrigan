@@ -40,7 +40,6 @@
             </tr>
             <tr>
                 <td>
-
                 </td>
                 <td style="text-align:center">
                     <table class="welcomMessageTable">
@@ -68,12 +67,12 @@
                 <td style="width: 60%;">&nbsp;</td>
                 <!-- 空きスペース -->
                 <td style="width: 20%;">&nbsp;</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>      
-            </td>
+            </tr>
+        </table>
+        </td>
+        </tr>
+    </table>      
+        </td>
         </tr>
     </table>
 
@@ -125,8 +124,12 @@
                             </tr>
                         </table>
                     </div>
-                </div>
-            <table><tr><td style="height:1px;"></td></tr></table>
+              </div>
+            <table><tr><td style="height:1px;"></td></tr></table> 
+            <div class="graph">
+                <svg width="100%" height="600" viewBox="0 0 600 400" id="bar">
+                </svg>
+            </div>
             <table id="tblAvail" style="width:100%; text-align:center;">
                 <tr>
                     <td></td>
@@ -142,6 +145,8 @@
 
     <!-- 簡単にレコード追加をするために作成しました。あとで消します。（赤木） -->
     <a href="register">新しくアカウントを作成</a>
-
+    <script src="js/call-api.js"></script>
+    <script src="js/drow-graph.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
