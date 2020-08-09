@@ -18,7 +18,7 @@
         
         //名前がDB内に存在しているか確認
         if (!isset($row['name'])) {
-          header("Location: incorrect.html");
+          header("Location: ../incorrect.html");
         } else {
           //パスワード確認後sessionに名前を渡す
           $password = htmlspecialchars($_POST["txtPassWord"]);
@@ -26,12 +26,12 @@
             session_regenerate_id(true); //session_idを新しく生成し、置き換える
             $_SESSION['name'] = $row['name'];
             $_SESSION['id'] = $row['id'];
-            header("Location: home");
+            header("Location: ../home");
           } else {
-            header("Location: incorrect.html");
+            header("Location: ../incorrect.html");
           }
         }
     } else {
-      header("Location: incorrect.html");
+      header("Location: ../incorrect.html");
     }
 ?>

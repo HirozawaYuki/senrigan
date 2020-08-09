@@ -9,7 +9,7 @@
   */
 
   // SQL文を実行する関数exeSQLを呼び出すためにdbconnect.phpを呼び出す
-  require "../dbconnect.php";
+  require "dbconnect.php";
 
   // ログインしているユーザー情報を保持
   session_start();
