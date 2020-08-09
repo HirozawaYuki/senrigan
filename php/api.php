@@ -37,8 +37,8 @@
       case "time":
         $stmt = exeSQL("SELECT * FROM login_time_table");
         break;
-      // ログインしているユーザー以外のユーザー名を取得する
-      case "other_user_name":
+      // ログインしているユーザー以外のユーザーを取得する
+      case "other_user":
         $stmt = exeSQL("SELECT * FROM user_table WHERE name != '".$_SESSION["name"]."' ORDER BY id");
         break;
       // ログインユーザーのid、パスワード、通知ON/OFFを取得する

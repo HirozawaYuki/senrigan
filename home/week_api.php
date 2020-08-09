@@ -3,7 +3,7 @@
 
     session_start();
 
-    $_SESSION["id"] = 1;
+    // $_SESSION["id"] = 1;
 
     // ログインユーザーの情報を全て取得
     $stmt = exeSQL("SELECT * FROM count_table WHERE id = '".$_SESSION["id"]."'");

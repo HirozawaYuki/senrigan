@@ -25,6 +25,7 @@
           if (password_verify($password, $row['password'])) {
             session_regenerate_id(true); //session_idを新しく生成し、置き換える
             $_SESSION['name'] = $row['name'];
+            $_SESSION['id'] = $row['id'];
             header("Location: home");
           } else {
             header("Location: incorrect.html");
