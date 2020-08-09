@@ -1,4 +1,7 @@
-// 直近7日間のカラーグラフを表示
+/**
+ * 直近7日間のカラーグラフを表示する関数です。
+ * @param {array} colors 
+ */
 function drowGraph(colors) {
 
   for (let i = 0;  i < 7;  i++) {

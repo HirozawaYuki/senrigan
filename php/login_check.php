@@ -5,7 +5,7 @@
     
     // ログインボタンを押した後の処理
     if(isset($_POST["txtName"])){
-
+        
         //DB内でPOSTe-mailを検索
         try {
           $txtName = htmlspecialchars($_POST["txtName"]);
