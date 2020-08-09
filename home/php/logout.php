@@ -1,14 +1,16 @@
 <?php
 
-    session_start();
+  session_start();
 
-    if (isset($_SESSION["name"])) {
-        echo 'Logoutしました。';
-    } else {
-        echo 'SessionがTimeoutしました。';
+  try {
+    // セッション情報がない場合
+    if (!isset($_SESSION["name"])) {
+      throw new Exception("Session is TimeOut");
     }
+    
     //セッション変数のクリア
     $_SESSION = array();
+    
     //セッションクッキーも削除
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
@@ -17,9 +19,16 @@
             $params["secure"], $params["httponly"]
         );
     }
-    //セッションクリア
-    @session_destroy();
-    //haro-ooooo
 
-    header("Location: ../index.html");
+    //セッションクリア（ログアウト）
+    @session_destroy();
+
+    echo 'Logoutしました。';
+    header("Location: ../../index.html");
+
+  } catch (Exception $e) {
+    echo $e->getMessage();
+  }
+    
+
 ?>
