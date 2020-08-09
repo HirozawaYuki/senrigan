@@ -14,10 +14,9 @@
       case "user":
         $stmt = exeSQL("SELECT * FROM (id_color_table a
         INNER JOIN user_table c ON a.id = c.id) INNER JOIN last_login_table d ON a.id = d.id");
-        // INNER JOIN personal_count_table b ON a.id = b.id) 
       break;
-      case "personal_count":
-        $stmt = exeSQL("SELECT * FROM date_count_table ORDER BY date DESC");
+      case "id_count":
+        $stmt = exeSQL("SELECT * FROM id_count_table ORDER BY id ASC");
         break;
       case "color_and_count":
         $stmt = exeSQL("SELECT * FROM date_color_table INNER JOIN date_count_table ON date_color_table.date = date_count_table.date ORDER BY date_color_table.date DESC");
