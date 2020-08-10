@@ -118,8 +118,10 @@ function showUsers(users) {
     //現在時刻の取得
     const now = new Date();
     now_sec = now.getTime();
+    console.log("現在ミリ秒"+now_sec);
     let before = new Date(user.last_login);
     let before_sec = before.getTime();
+    console.log("データベースのミリ秒"+before_sec);
     let diff = parseInt(now_sec - before_sec); //変更
     const diff_hour = parseInt(diff / (1000 * 60 * 60));
     if (diff_hour > 168) {
