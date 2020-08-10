@@ -3,150 +3,125 @@
 <head>
     <title>Login</title>
     <meta charset="UTF-8" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/yogin.css">
 </head>
 
 <body>
-    <form action="php/login_check.php" method="post">
-    <table id="headerTable" class="headerTable">
-        <tr>
-            <td>
-    <table id="loginHeader_tblLoginHeader" style="width: 100%; padding-left: 6px;">
-        <tr>
-            <td class="medium_bb_t" valign="middle" align="right">
-        <div style="margin-right: 40px;">
-            <script type="text/javascript">
-                var now = new Date();
-                // 表示開始 
-                document.write(now.toLocaleString());
-                // 表示終了 
-            </script>
+
+
+    <!-- <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav4"
+            aria-controls="navbarNav4"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"
+            ><i class="fas fa-glasses"></i> Senrigan</a
+          >
+        </nav>
+      </header> -->
+      <!-- callApi("../php/api.php?type=count&id="+user.id,drowCountGraph); -->
+      <div class="container">
+        <main>
+            <div class="text-right">
+                <script type="text/javascript">
+                    var now = new Date();
+                    document.write(now.toLocaleString());
+                </script>
+            </div>
+            <div>
+                <image id="parasol_image"></image>
+                <!-- <script type="text/javascript">
+                    callApi("php/api.php?type=umbrella", Decision_umbrella);
+                </script> -->
+                <!-- <script type="text/javascript">
+                    callApi("php/api.php?type=umbrella", Decision_umbrella);
+                </script> -->
+            </div>
+          <div class="text-center mt-5 mb-5">
+            <h2>ログイン画面</h2>
+          </div>
+  
+          <form method="POST" action="php/login_check.php">
+            <div class="form-group row">
+              <label for="name" class="col-sm-3 col-form-label">名前</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="txtName"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password" class="col-sm-3 col-form-label"
+                >パスワード</label
+              >
+              <div class="col-sm-9">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="txtPassWord"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+            </div>
+  
+            <br />
+            <hr />
+            <br />
+            <div class="form-group">
+              <button type="submit" class="btn btn-success w-100">
+                ログイン
+              </button>
+            </div>
+          </form>
+        </main>
+      </div>
+  
+      <footer class="footer"></footer>
+
+
+
+    <div class="graph">
+        <svg width="100%" height="600" viewBox="0 0 600 400" id="bar">
+        </svg>
         </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-        <table style="width: 92%;">
+        <table id="tblAvail" style="width:100%; text-align:center;">
             <tr>
-                <!-- 空きスペース -->
-                <td style="width: 20%;">&nbsp;</td>
-                <!-- ウェルカムメッセージ -->
-                <td style="width: 60%; text-align: center;">
-                    <img id="loginHeader_Image2" src="img/Senrigan copy.png" alt="Logo" />
-                </td>
-                <!-- 大学ロゴ -->
-                <td style="width: 20%;">
-                </td>
+                <td></td>
             </tr>
             <tr>
                 <td>
+                    <span id="lblAvail" style="color:Red;"></span>
+                    <span id="lblErrMsg" style="color:Red;"></span>
                 </td>
-                <td style="text-align:center">
-                    <table class="welcomMessageTable">
-                        <tr>
-                            <td style="font-size: xx-large;">
-                                
-                                <span id="loginHeader_lblWelcome_1_lbl">ようこそ</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="height: 5px;"></td>
-                        </tr>
-
-                    </table>
-                </td>
-                <td style="text-align:center">
-                    
-                </td>
-            </tr>
-            <tr>
-                <!-- 空きスペース -->
-                <td style="vertical-align: sub; text-align: center; width: 25%; padding-top: 1em; padding-left: 5em;white-space: nowrap;">
-                </td>
-                <!-- 空きスペース -->
-                <td style="width: 60%;">&nbsp;</td>
-                <!-- 空きスペース -->
-                <td style="width: 20%;">&nbsp;</td>
             </tr>
         </table>
-        </td>
-        </tr>
-    </table>      
-        </td>
-        </tr>
-    </table>
-
-    <table style="width:100%; text-align:center">
-        <tr>
-            <td>
-                <div class="login_area">
-                    <div class="login_ipbox">
-                        <table id="tblMain" style="width:100%">
-                            <tr>
-                            <td style="width:5%;"></td>
-                                <td style="width:30%; text-align:right; vertical-align:middle; ">
-                                    <span id="lblID_lbl" style="color:black;">名前</span>
-                                </td>
-                                <td style="width:60%; text-align:left; vertical-align:middle;">
-                                    <input name="txtName" type="text" maxlength="25" id="txtName" tabindex="1" class="imeDisabled" style="font-size:Larger;height:26px;width:150px;" required/>
-                                </td>
-                                <td style="width:5%;"></td>
-                            </tr>
-                            <tr>
-                                <td style="height:8px;"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td style="text-align:right; vertical-align:middle;">   
-                                    <span id="lblPassWord_lbl" style="color:black;">パスワード </span>
-                                </td>
-                                <td style="text-align:left; vertical-align:middle;">
-                                    <input name="txtPassWord" type="password" maxlength="40" id="txtPassWord" tabindex="2" class="imeDisabled" style="font-size:Larger;height:26px;width:150px;" required/>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td style="height:14px;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;" colspan="4">
-                                    <input type="submit" name="ctl24$btnLogin" value="ログイン" id="ctl24_btnLogin" class="login_btn" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="height:14px;"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;" colspan="4">
-                                    <!-- <a href="/password_reset.php">パスワードをお忘れの場合</a> -->
-                                    <a href="#">パスワードをお忘れの場合</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-              </div>
-            <table><tr><td style="height:1px;"></td></tr></table> 
-            <div class="graph">
-                <svg width="100%" height="600" viewBox="0 0 600 400" id="bar">
-                </svg>
-            </div>
-            <table id="tblAvail" style="width:100%; text-align:center;">
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <span id="lblAvail" style="color:Red;"></span>
-                        <span id="lblErrMsg" style="color:Red;"></span>
-                    </td>
-                </tr>
-    </table>
     </form>
 
     <!-- 簡単にレコード追加をするために作成しました。あとで消します。（赤木） -->
-    <a href="register">新しくアカウントを作成</a>
+    <a href="register" class="text-center mt-5 mb-5">新しくアカウントを作成</a>
     <script src="js/call-api.js"></script>
     <script src="js/drow-graph.js"></script>
+    <script src="js/Decision_umbrella.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
