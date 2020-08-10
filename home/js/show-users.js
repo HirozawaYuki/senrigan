@@ -17,6 +17,7 @@ function showUsers(users) {
     const li = document.createElement("li");
     li.classList.add("flex");
     li.classList.add("user_list");
+    li.classList.add("row"); //
     ul.appendChild(li);
     /**
      * 現在のHTMLの状態
@@ -41,10 +42,12 @@ function showUsers(users) {
       "background-color: rgb(" + user.r + "," + user.g + "," + user.b + ")"
     );
     div[0].classList.add("image_color");
+    div[0].classList.add("col-1");
 
     // ユーザー名を表示する
     div[1].innerHTML = user.name;
     div[1].classList.add("user_name");
+    div[1].classList.add("col-6");
     if (user.attend == 1) {
       div[1].classList.add("attend");
     } else if (user.attend == 0) {
@@ -52,7 +55,11 @@ function showUsers(users) {
     }
 
     // IN or OUTを表示する
+    div[2].classList.add("in_out");
+    div[2].classList.add("col-2");
     const img = document.createElement("img");
+    img.classList.add("d-block");
+    img.classList.add("mx-auto");
     if (user.attend == 1) {
       img.classList.add("in_image");
       img.setAttribute("src", "../img/in.png");
@@ -64,12 +71,12 @@ function showUsers(users) {
       img.setAttribute("alt", "OUTの画像です");
       div[2].setAttribute("style", "background-color: black");
     }
-    div[2].classList.add("in_out");
     div[2].appendChild(img);
 
     // グラフとn時間前を表示する
     div[3].classList.add("column");
     div[3].classList.add("graph_time");
+    div[3].classList.add("col-3");
     if (user.attend == 1) {
       div[3].setAttribute("style", "background-color: white");
     } else if (user.attend == 0) {

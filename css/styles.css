@@ -36,15 +36,16 @@ body {
 }
 
 .image_color {
-  min-width: 40px;
+  /* min-width: 40px; */
   height: 100%;
 }
 
 .user_name {
-  width: 400px;
+  /* width: 400px; */
   font-size: xx-large;
   text-align: center;
-  margin: 0px;
+  padding: 0px;
+  /* margin: 0px; */
 }
 
 .attend {
@@ -58,19 +59,18 @@ body {
 }
 
 .in_out {
-  margin: 0px;
-  padding: 0px 20px;
+  /* margin: 0px; */
+  /* padding: auto 20px; */
 }
 
 .in_image {
-  height: 100%;
-  width: 60px;
+  height: 50px;
   background-color: white;
 }
 
 .out_image {
   height: 100%;
-  width: 60px;
+  width: 50px;
   background-color: black;
 }
 
