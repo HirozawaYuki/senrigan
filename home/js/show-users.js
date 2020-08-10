@@ -62,12 +62,12 @@ function showUsers(users) {
     img.classList.add("mx-auto");
     if (user.attend == 1) {
       img.classList.add("in_image");
-      img.setAttribute("src", "../img/in.png");
+      img.setAttribute("src", "../img/in2.png");
       img.setAttribute("alt", "INの画像です");
       div[2].setAttribute("style", "background-color: white");
     } else if (user.attend == 0) {
       img.classList.add("out_image");
-      img.setAttribute("src", "../img/out.png");
+      img.setAttribute("src", "../img/out2.png");
       img.setAttribute("alt", "OUTの画像です");
       div[2].setAttribute("style", "background-color: black");
     }
@@ -91,7 +91,10 @@ function showUsers(users) {
       div[3].appendChild(div_child[i]);
     }
 
+    // グラフ画像を表示
     div_child[0].setAttribute("style", "margin: 0px");
+    div_child[0].classList.add("d-block");
+    div_child[0].classList.add("mx-auto");
     const graph_img = document.createElement("img");
     graph_img.classList.add("graph_image");
     if (user.attend == 1) {
@@ -121,6 +124,7 @@ function showUsers(users) {
       div_child[1].innerHTML = diff_hour + "時間前";
     }
 
+    div_child[1].classList.add("text-center");
     if (user.attend == 1){
       div_child[1].setAttribute("style","color: black");
     } else if (user.attend == 0){
