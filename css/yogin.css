@@ -6,6 +6,12 @@ body {
   position: relative;
 }
 
+#parasol_image {
+  margin-left: 90%;
+  width: 10%;
+  height: 10%;
+}
+
 .graph {
   width: 100%;
   opacity: 0.5;
