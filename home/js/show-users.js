@@ -120,7 +120,7 @@ function showUsers(users) {
     now_sec = now.getTime();
     let before = new Date(user.last_login);
     let before_sec = before.getTime();
-    let diff = now_sec - before_sec;
+    let diff = parseInt(now_sec - before_sec); //変更
     const diff_hour = parseInt(diff / (1000 * 60 * 60));
     if (diff_hour > 168) {
       div_child[1].innerHTML = "1週間以上前";
