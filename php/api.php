@@ -25,9 +25,13 @@
         $stmt = exeSQL("SELECT * FROM (id_color_table a
         INNER JOIN user_table c ON a.id = c.id) INNER JOIN last_login_table d ON a.id = d.id ORDER BY attend DESC");
       break;
-      // ユーザーidとそのユーザーの出席数を取得する
+      // ユーザーid・名前・出席数を取得する
       case "count":
-        $stmt = exeSQL("SELECT * FROM id_count_table ORDER BY id ASC");
+        if (!isset($_GET["id"])){
+          throw new Exception("parameter id is not defined");
+        }
+        $id = (int)($_GET["id"]);
+        $stmt = exeSQL("SELECT * FROM id_count_table INNER JOIN user_table ON id_count_table.id = user_table.id WHERE user_table.id = ".$id."");
         break;
       // 直近7日間の色と出席数を取得する
       case "color_and_count":

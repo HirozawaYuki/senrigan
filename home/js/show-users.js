@@ -93,8 +93,16 @@ function showUsers(users) {
 
     // グラフ画像を表示
     div_child[0].setAttribute("style", "margin: 0px");
+
+    // モーダルの設定
     div_child[0].classList.add("d-block");
     div_child[0].classList.add("mx-auto");
+    div_child[0].setAttribute("data-toggle","modal");
+    div_child[0].setAttribute("data-target","#Modal");
+    div_child[0].onclick = function () {
+      callApi("../php/api.php?type=count&id="+user.id,drowCountGraph);
+    };
+
     const graph_img = document.createElement("img");
     graph_img.classList.add("graph_image");
     if (user.attend == 1) {
