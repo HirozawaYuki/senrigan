@@ -62,12 +62,12 @@ function showUsers(users) {
     img.classList.add("mx-auto");
     if (user.attend == 1) {
       img.classList.add("in_image");
-      img.setAttribute("src", "../img/in2.png");
+      img.setAttribute("src", "../img/in.png");
       img.setAttribute("alt", "INの画像です");
       div[2].setAttribute("style", "background-color: white");
     } else if (user.attend == 0) {
       img.classList.add("out_image");
-      img.setAttribute("src", "../img/out2.png");
+      img.setAttribute("src", "../img/out.png");
       img.setAttribute("alt", "OUTの画像です");
       div[2].setAttribute("style", "background-color: black");
     }
