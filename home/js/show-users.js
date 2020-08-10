@@ -114,7 +114,6 @@ function showUsers(users) {
     let before_sec = before.getTime();
     let diff = now_sec - before_sec;
     const diff_hour = parseInt(diff / (1000 * 60 * 60));
-    console.log(diff_hour);
     if (diff_hour > 168) {
       div_child[1].innerHTML = "1週間以上前";
     } else if (diff_hour > 24) {

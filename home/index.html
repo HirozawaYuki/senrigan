@@ -32,10 +32,67 @@
       </div>
     </div>
 
+    <h1>モーダルサンプル</h1>
+    <!-- 切り替えボタンの設定 -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#Modal"
+    >
+      押すと表示されます。
+    </button>
+
+    <!-- モーダルの設定 -->
+
+    <div
+      class="modal fade"
+      id="Modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="Modal"
+      aria-hidden="true"
+    >
+      <!--以下modal-dialogのCSSの部分で modal-lgやmodal-smを追加するとモーダルのサイズを変更することができる-->
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="Modal">若本</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="閉じる"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="target"></div>
+          <script
+            type="text/javascript"
+            src="https://www.google.com/jsapi"
+          ></script>
+          <div id="gct_sample_column" style="width: 100%; height: 100%;"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JSファイル -->
     <script src="../js/call-api.js"></script>
     <script src="js/show-users.js"></script>
+    <script src="js/drow-count-graph.js"></script>
     <script src="js/main.js"></script>
 
+    <!-- Bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

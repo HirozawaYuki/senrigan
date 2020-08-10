@@ -82,6 +82,7 @@ body {
 .graph_image {
   width: 60px;
   height: 24px;
+  cursor: pointer;
 }
 
 .graph_time {
