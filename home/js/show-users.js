@@ -1,140 +1,146 @@
-// 全ユーザーの名前・在室状況を表示する関数
-function showUsers(users){
-  
-  users.forEach(user => {
-    
+/**
+ * 全ユーザーの在室状況・在室時間を可視化する関数
+ * @param {array} users
+ */
+function showUsers(users) {
+  const main = document.getElementById("main");
+  const ul = document.createElement("ul");
+  main.appendChild(ul);
+  /**
+   * 現在のHTMLの状態
+   * <div id="main">
+   *   <ul>
+   * </div>
+   */
+
+  users.forEach((user) => {
+    const li = document.createElement("li");
+    li.classList.add("flex");
+    li.classList.add("user_list");
+    li.classList.add("row"); //
+    ul.appendChild(li);
+    /**
+     * 現在のHTMLの状態
+     * <div id="main">
+     *   <ul>
+     *     <li></li>
+     *   </ul>
+     * </div>
+     */
+
+    // divタグを格納する配列を定義
+    let div = [];
+    div.length = 4;
+
+    for (let i = 0; i < div.length; i++) {
+      div[i] = document.createElement("div");
+    }
+
+    // イメージカラーを表示する
+    div[0].setAttribute(
+      "style",
+      "background-color: rgb(" + user.r + "," + user.g + "," + user.b + ")"
+    );
+    div[0].classList.add("image_color");
+    div[0].classList.add("col-1");
+
+    // ユーザー名を表示する
+    div[1].innerHTML = user.name;
+    div[1].classList.add("user_name");
+    div[1].classList.add("col-6");
+    if (user.attend == 1) {
+      div[1].classList.add("attend");
+    } else if (user.attend == 0) {
+      div[1].classList.add("absent");
+    }
+
+    // IN or OUTを表示する
+    div[2].classList.add("in_out");
+    div[2].classList.add("col-2");
+    const img = document.createElement("img");
+    img.classList.add("d-block");
+    img.classList.add("mx-auto");
+    if (user.attend == 1) {
+      img.classList.add("in_image");
+      img.setAttribute("src", "../img/in.png");
+      img.setAttribute("alt", "INの画像です");
+      div[2].setAttribute("style", "background-color: white");
+    } else if (user.attend == 0) {
+      img.classList.add("out_image");
+      img.setAttribute("src", "../img/out.png");
+      img.setAttribute("alt", "OUTの画像です");
+      div[2].setAttribute("style", "background-color: black");
+    }
+    div[2].appendChild(img);
+
+    // グラフとn時間前を表示する
+    div[3].classList.add("column");
+    div[3].classList.add("graph_time");
+    div[3].classList.add("col-3");
+    if (user.attend == 1) {
+      div[3].setAttribute("style", "background-color: white");
+    } else if (user.attend == 0) {
+      div[3].setAttribute("style", "background-color: black");
+    }
+
+    // グラフと時間を表示するためのdivタグを作成
+    const div_child = [];
+    div_child.length = 2;
+    for (let i = 0; i < div_child.length; i++) {
+      div_child[i] = document.createElement("div");
+      div[3].appendChild(div_child[i]);
+    }
+
+    // グラフ画像を表示
+    div_child[0].setAttribute("style", "margin: 0px");
+
+    // モーダルの設定
+    div_child[0].classList.add("d-block");
+    div_child[0].classList.add("mx-auto");
+    div_child[0].setAttribute("data-toggle","modal");
+    div_child[0].setAttribute("data-target","#Modal");
+    div_child[0].onclick = function () {
+      callApi("../php/api.php?type=count&id="+user.id,drowCountGraph);
+    };
+
+    const graph_img = document.createElement("img");
+    graph_img.classList.add("graph_image");
+    if (user.attend == 1) {
+      graph_img.setAttribute("src", "../img/attend_graph.png");
+      graph_img.setAttribute("alt", "グラフの画像です");
+    } else if (user.attend == 0) {
+      graph_img.setAttribute("src", "../img/absent_graph.png");
+      graph_img.setAttribute("alt", "OUTの画像です");
+    }
+    div_child[0].appendChild(graph_img);
+
+    // n時間前を表示する
+    //現在時刻の取得
+    const now = new Date();
+    now_sec = now.getTime();
+    let before = new Date(user.last_login);
+    let before_sec = before.getTime();
+    let diff = now_sec - before_sec;
+    const diff_hour = parseInt(diff / (1000 * 60 * 60));
+    if (diff_hour > 168) {
+      div_child[1].innerHTML = "1週間以上前";
+    } else if (diff_hour > 24) {
+      const diff_day = parseInt(diff_hour / 24);
+      div_child[1].innerHTML = diff_day + "日前";
+    } else {
+      div_child[1].innerHTML = diff_hour + "時間前";
+    }
+
+    div_child[1].classList.add("text-center");
+    if (user.attend == 1){
+      div_child[1].setAttribute("style","color: black");
+    } else if (user.attend == 0){
+      div_child[1].setAttribute("style","color: white");
+    }
+
+    // divタグを全てliにappendする
+    div.forEach((element) => {
+      li.appendChild(element);
+    });
   });
-
-  /*在室者と不在者にを分ける*/
-  var attendance_list = [];
-  var attend_num = 0;
-  var absent_list = [];
-  var absent_num = 0;
-
-  //現在時刻の取得
-  var date=new Date();
-  //現在の日
-  //var day=date.day();
-  //現在の時間
-  var hour=date.getHours();
-
-  //時間を保存するリスト
-  var attend_time_list=[];
-  var absent_time_list=[];
-
-  //色を保存するリスト
-  var attend_color_list_r=[];
-  var absent_color_list_r=[];
-  var attend_color_list_g=[];
-  var absent_color_list_g=[];
-  var attend_color_list_b=[];
-  var absent_color_list_b=[];
-
-
-  var check_attendance = "square_attendance";
-  for (var human = 0; human < users.length; human++) {
-
-    const attend = users[human].attend;
-
-    //時間の計算
-    var time=users[human].last_login;
-    var last_hour=time[11]+time[12];
-    var show_hour=hour-last_hour;
-
-    if (attend == 1) {
-      check_attendance === "square_attendance";
-      attendance_list[attend_num] = users[human].name;
-      attend_time_list[attend_num]=show_hour;
-      attend_color_list_r[attend_num]=users[human].r;
-      attend_color_list_g[attend_num]=users[human].g;
-      attend_color_list_b[attend_num]=users[human].b;
-      attend_num += 1;
-    } else {
-      check_attendance === "square_absent";
-      absent_list[absent_num] = users[human].name;
-      absent_time_list[absent_num]=show_hour;
-      absent_color_list_r[absent_num]=users[human].r;
-      absent_color_list_g[absent_num]=users[human].g;
-      absent_color_list_b[absent_num]=users[human].b;
-      absent_num += 1;
-    }
-  }
-
-  var color_list=["red","green","blue","red","blue","green"];
-  
-  var member_concat = attendance_list.concat(absent_list); //在室者がリストの先頭に来るようにリストを結合
-  
-  var tiem_list=attend_time_list.concat(absent_time_list);
-
-  var color_list_r=attend_color_list_r.concat(absent_color_list_r);
-
-  var color_list_g=attend_color_list_g.concat(absent_color_list_g);
-
-  var color_list_b=attend_color_list_b.concat(absent_color_list_b);
-
-  for (var num = 0; num < member_concat.length; num++) {
-    
-    // createElement:タグの生成　<button></button>
-    var div = document.createElement("div");
-    var p0 = document.createElement("p");
-    var p1 = document.createElement("p");
-    var p2 = document.createElement("p");
-    var button = document.createElement("button");
-
-    var p_attend_time=document.createElement("p");
-    var p_absent_time=document.createElement("p");
-
-    // innerHTMLを用いることで要素の中身を変更することができる
-    p1.innerHTML = member_concat[num];
-    // setAttribute:タグの属性の設定
-    p1.setAttribute("id", num);
-    // var check_attendance = decision_class();
-    div.setAttribute("class","flex_container");
-
-    /*在室者は前半に置いてあるはずなので、総在室者の数に達するまでは在室として定義*/
-    if (attend_num > num) {
-      p1.setAttribute("class", "square_attendance");
-      // p2.innerHTML = "在室";
-      p2.setAttribute("id", "attendance");
-
-      //時間の表示
-    p_attend_time.innerHTML=(tiem_list[num].toString())+"時間前";
-    p_attend_time.setAttribute("id","log_attend_time");
-      //グラフの表示
-      button.setAttribute("id","attend_button");
-    } else {
-      p1.setAttribute("class", "square_absent");
-      // p2.innerHTML = "不在";
-      p2.setAttribute("id", "absent");
-
-      //時間の表示
-    p_absent_time.innerHTML=(tiem_list[num].toString())+"時間前";
-    p_absent_time.setAttribute("id","log_absent_time");
-
-    //グラフの表示
-    button.setAttribute("id","absent_button");
-    }
-    //b1.innerHTML="";
-
-    p0.setAttribute("class","user_color");
-    p0.setAttribute("style","background-color:rgb("+color_list_r[num]+","+color_list_g[num]+","+color_list_b[num]+"); border:thin solid rgb("+color_list_r[num]+","+color_list_g[num]+","+color_list_b[num]+")");
-
-    //appendChild:HTMLに設定済みのタグを挿入
-    document.getElementById("main").appendChild(div);
-    div.appendChild(p0);
-    div.appendChild(p1);
-    div.appendChild(p2);
-    div.appendChild(button);
-    div.appendChild(p_attend_time);
-    div.appendChild(p_absent_time);
-    // document.getElementById("main").appendChild(p1);
-    // document.getElementById("main").appendChild(p2);
-    // document.getElementById("main").appendChild(b1);
-    var left_pos = 5;
-    var top_pos = 100;
-    document.getElementById(num).style.left = "" + left_pos + "%";
-    document.getElementById(num).style.top = "" + top_pos + "px";
-  }
-  //document.getElementById("main").appendChild(p_time);
-  
 }

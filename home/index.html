@@ -3,32 +3,99 @@
   <head>
     <title>Home</title>
     <meta charset="UTF-8" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../css/styles.css" />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
   </head>
 
   <body>
+
     <img class="system_name" src="../img/Senrigan.png" />
-    <h1 class="lab_name">アンチプログラミング研究室</h1>
-    <div id="main"></div>
 
-    <div class="flex_container">
-      <button id="logout" onclick="location.href='php/logout.php'">
-        ログアウト
-      </button>
-    </div>
-    <div>
-      <button id="user_info" onclick="location.href='management'">
-        ユーザ管理
-      </button>
+    <div class="container">
+      <h1 class="lab_name">アンチプログラミング研究室</h1>
+      <div id="main"></div>
+
+      <div class="flex_container">
+        <button class="logout" onclick="location.href='php/logout.php'">
+          ログアウト
+        </button>
+      </div>
+      <div>
+        <button class="user_info" onclick="location.href='management'">
+          ユーザ管理
+        </button>
+      </div>
     </div>
 
+    <!-- モーダルの設定 -->
+
+    <div
+      class="modal fade"
+      id="Modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="Modal"
+      aria-hidden="true"
+    >
+      <!--以下modal-dialogのCSSの部分で modal-lgやmodal-smを追加するとモーダルのサイズを変更することができる-->
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="graph_name">頻度グラフ</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="閉じる"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="target"></div>
+          <script
+            type="text/javascript"
+            src="https://www.google.com/jsapi"
+          ></script>
+          <div id="gct_sample_column" style="width: 100%; height: 100%;"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JSファイル -->
     <script src="../js/call-api.js"></script>
     <script src="js/show-users.js"></script>
+    <script src="js/drow-count-graph.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
