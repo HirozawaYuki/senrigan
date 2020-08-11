@@ -36,16 +36,13 @@ body {
 }
 
 .image_color {
-  /* min-width: 40px; */
   height: 100%;
 }
 
 .user_name {
-  /* width: 400px; */
+  height: 100%;
   font-size: xx-large;
   text-align: center;
-  padding: 0px;
-  /* margin: 0px; */
 }
 
 .attend {
@@ -54,23 +51,20 @@ body {
 }
 
 .absent {
-  background-color: black;
+  background-color: #04012c;
   color: white;
 }
 
 .in_out {
-  /* height: 100%; */
+  height: 100%;
 }
 
 .in_image {
-  height: 50px;
   background-color: white;
 }
 
 .out_image {
-  height: 50px;
-  /* width: 50px; */
-  background-color: black;
+  background-color: #04012c;
 }
 
 .column {
@@ -86,7 +80,7 @@ body {
 }
 
 .graph_time {
-  max-width: 300px;
+  /* max-width: 300px; */
   padding: 0px 20px;
   margin: 0px;
 }
