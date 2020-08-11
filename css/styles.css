@@ -4,15 +4,6 @@ body {
   background: #b8b2ea;
 }
 
-/*
-.system_name {
-  display: block;
-  width: 300px;
-  height: 100px;
-  margin-right: auto;
-}
-*/
-
 #flex_container {
   display: flex;
   flex-direction: row;
@@ -25,14 +16,6 @@ body {
 .flex {
   display: flex;
 }
-
-/*
-.lab_name {
-  font-size: 30px;
-  text-align: center;
-  border: solid 2px orange;
-}
-*/
 
 .user_list {
   height: 50px;
@@ -170,7 +153,7 @@ ul {
   scroll-padding-top: 80px;
 }
 
-#back {
+.back {
   width: 45%;
   height: 8%;
   font-size: 1.4em;
@@ -187,7 +170,7 @@ ul {
   background-position: 10%;
 }
 
-#register {
+.register {
   width: 45%;
   height: 8%;
   font-size: 1.4em;
