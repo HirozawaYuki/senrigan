@@ -9,10 +9,14 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
     crossorigin="anonymous"
   />
-  <link rel="stylesheet" href="css/yogin.css" />
+  <!-- <link rel="stylesheet" href="css/yogin.css" /> -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
+  <div class="Header">
+    <img class="system_name" src="img/Senrigan.png" />
+  </div>
   <div class="container">
     <main>
       <div class="text-right">
@@ -66,12 +70,15 @@
           </button>
         </div>
       </form>
+
+      <div class="graph">
+        <svg width="100%" height="200" viewBox="0 0 100% 100%" id="bar"></svg>
+      </div>
+
     </main>
   </div>
 
-  <div class="graph">
-    <svg width="100%" height="200" viewBox="0 0 600 400" id="bar"></svg>
-  </div>
+  
 
   <footer class="footer"></footer>
 
