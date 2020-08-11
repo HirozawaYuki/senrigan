@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ユーザー管理</title>
     <link
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
@@ -16,6 +12,7 @@
     />
     <link rel="stylesheet" href="../../css/styles.css" />
   </head>
+
   <body>
     <div class="Header">
       <img class="system_name" src="../../img/Senrigan.png" />
@@ -30,44 +27,63 @@
         name="form1"
         onsubmit="return Check()"
       >
-        <div class="form-group row">
-          <label for="name" class="col-sm-3 col-form-label">名前</label>
-          <div class="col-sm-9" id="name"></div>
+        <div class="form-group">
+          <label for="name" class="col-form-label">名前</label>
+          <input type="text" class="form-control" name="name" id="name" />
         </div>
 
-        <div class="form-group row">
-          <label for="slack_id" class="col-sm-3 col-form-label">Slack ID</label>
-          <div class="col-sm-9" id="slack_id"></div>
+        <div class="form-group">
+          <label for="slack_id" class="col-form-label">Slack ID</label>
+          <input
+            type="text"
+            class="form-control"
+            name="slack_id"
+            id="slack_id"
+          />
         </div>
 
-        <div class="form-group row">
-          <label for="password" class="col-sm-3 col-form-label"
-            >パスワード</label
-          >
-          <div class="col-sm-9" id="password" class="wrap"></div>
+        <div class="form-group">
+          <label for="password" class="col-form-label">パスワード</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password1"
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            class="form-control"
+            id="password2"
+            name="password2"
+            placeholder="Password"
+          />
         </div>
 
-        <div class="form-group row">
-          <label for="notice" class="col-sm-3 col-form-label">出欠の通知</label>
-          <div id="notice"></div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="1"
+            name="notice"
+            id="notice"
+          />
+          <label for="notice" class="form-check-label">Slackで通知する</label>
         </div>
 
-        <div class="form-group row">
-          <label for="notice_id" class="col-sm-3 col-form-label"
-            >出席状況を知りたいユーザー</label
-          >
-          <div id="notice_id"></div>
+        <div class="form-group" id="notice_id">
+          <label class="col-form-label">次のユーザーが出席したら通知する</label>
         </div>
 
         <div class="flex_container">
           <div class="d-flex justify-content-around">
             <input
-              id="register"
+              class="register"
               type="submit"
               name="update"
               value="更新する"
             />
-            <button id="back" type="button" onclick="location.href='../'">
+            <button class="back" type="button" onclick="location.href='../'">
               戻る
             </button>
           </div>
