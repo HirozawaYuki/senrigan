@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ユーザー管理</title>
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../../css/styles.css" />
-
   </head>
   <body>
-    <header>
-      <img class="system-name" src="../../img/Senrigan.png" alt="Senrigan" />
-      <nav style="text-align: center;">
-        <h2><span>ユーザー管理画面</span></h2>
-      </nav>
-    </header>
+    <div class="Header">
+      <img class="system_name" src="../../img/Senrigan.png" />
+    </div>
+    <h1 class="lab_name" color="white">ユーザー設定</h1>
 
     <div class="container">
       <form
@@ -36,7 +41,9 @@
         </div>
 
         <div class="form-group row">
-          <label for="password" class="col-sm-3 col-form-label">パスワード</label>
+          <label for="password" class="col-sm-3 col-form-label"
+            >パスワード</label
+          >
           <div class="col-sm-9" id="password" class="wrap"></div>
         </div>
 
@@ -46,13 +53,24 @@
         </div>
 
         <div class="form-group row">
-          <label for="notice_id" class="col-sm-3 col-form-label">出席状況を知りたいユーザー</label>
+          <label for="notice_id" class="col-sm-3 col-form-label"
+            >出席状況を知りたいユーザー</label
+          >
           <div id="notice_id"></div>
         </div>
 
-        <div class="text-center mt-5 mb-5">
-          <input type="submit" class="update" name="update" value="更新する" />
-          <button type="button" class="btn btn-primary" onclick="location.href='../'">戻る</button>
+        <div class="flex_container">
+          <div class="d-flex justify-content-around">
+            <input
+              id="register"
+              type="submit"
+              name="ok"
+              value="     更新する"
+            />
+            <button id="back" type="button" onclick="location.href='../'">
+              戻る
+            </button>
+          </div>
         </div>
       </form>
     </div>
@@ -62,8 +80,20 @@
     <script src="js/main.js"></script>
 
     <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
