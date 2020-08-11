@@ -4,12 +4,14 @@ body {
   background: #b8b2ea;
 }
 
+/*
 .system_name {
   display: block;
   width: 300px;
   height: 100px;
   margin-right: auto;
 }
+*/
 
 #flex_container {
   display: flex;
@@ -24,11 +26,13 @@ body {
   display: flex;
 }
 
+/*
 .lab_name {
   font-size: 30px;
   text-align: center;
   border: solid 2px orange;
 }
+*/
 
 .user_list {
   height: 50px;
@@ -132,4 +136,68 @@ ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
+}
+
+/* 以下，wakamoto変更：ヘッダ用*/
+.Header {
+position: relative; /* ヘッダーを固定する */
+top: 0; /* 上部から配置の基準位置を決める */
+left: -3%; /* 左から配置の基準位置を決める */
+width: 106%; /* ヘッダーの横幅を指定する */
+height: 10vh; /* ヘッダーの高さを指定する */
+padding: 10px; /* ヘッダー内側の余白を指定する(上下左右) */
+background-color: #d3d1fd; /* ヘッダーの背景色を指定する */
+color: #000; /* ヘッダーのフォントの色を指定する */
+border-bottom: 3px solid #c3c1dd; /* ヘッダーの境界線（下部）を指定する */
+box-shadow:0 7px 10px 2px #aaaaaa; /* 影を指定（[右][下][ぼかし][広がり][影の色]） */
+}
+
+.system_name {
+  display: block;
+  height: 8vh;
+  width: auto;
+  margin-right: auto;
+  margin-top: -10px;
+  margin-bottom: -20px;
+}
+
+.lab_name {
+  padding-top: 2%;
+  font-size: 30px;
+  text-align: center;
+  scroll-padding-top: 80px;
+}
+
+#back {
+  width: 45%;
+  height: 8%;
+  font-size: 1.4em;
+  left: 2%;
+  bottom: 2%;
+  background-color: black;
+  color: white;
+  position: fixed;
+  font-weight: bold;
+  border-radius: 10%;
+  cursor: pointer;
+  background-image: url("./../img/back.png");
+  background-repeat: no-repeat;
+  background-position: 10%;
+}
+
+#register {
+  width: 45%;
+  height: 8%;
+  font-size: 1.4em;
+  right: 2%;
+  bottom: 2%;
+  background-color: black;
+  color: white;
+  position: fixed;
+  font-weight: bold;
+  border-radius: 10%;
+  cursor: pointer;
+  background-image: url("./../img/register.png");
+  background-repeat: no-repeat;
+  background-position: 10%;
 }

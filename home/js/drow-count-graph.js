@@ -8,8 +8,7 @@ function drowCountGraph(users) {
       // グラフ名をつける（ユーザー名）
       const modal = document.getElementById("graph_name");
       modal.innerHTML = user.name;
-      console.log("id="+user.id);
-    
+      
       google.load("visualization", "1", { packages: ["corechart"] });
       google.setOnLoadCallback(function () {
         var data = new google.visualization.DataTable();

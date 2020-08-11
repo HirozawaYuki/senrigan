@@ -10,12 +10,10 @@
 
   </head>
   <body>
-    <header>
-      <img class="system-name" src="../../img/Senrigan.png" alt="Senrigan" />
-      <nav style="text-align: center;">
-        <h2><span>ユーザー管理画面</span></h2>
-      </nav>
-    </header>
+    <div class="Header">
+    <img class="system_name" src="../../img/Senrigan.png" />
+    </div>
+    <h1 class="lab_name" color="white">ユーザー設定</h1>
 
     <div class="container">
       <form
@@ -50,9 +48,11 @@
           <div id="notice_id"></div>
         </div>
 
-        <div class="text-center mt-5 mb-5">
-          <input type="submit" class="update" name="update" value="更新する" />
-          <button type="button" class="btn btn-primary" onclick="location.href='../'">戻る</button>
+        <div class="flex_container">
+          <div class="d-flex justify-content-around">
+            <input id="register" type="submit" name="ok" value="     更新する"/>
+            <button id="back" type="button" onclick="location.href='../'">戻る</button>
+	      </div>
         </div>
       </form>
     </div>

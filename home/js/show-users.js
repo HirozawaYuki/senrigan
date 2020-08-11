@@ -115,17 +115,27 @@ function showUsers(users) {
     div_child[0].appendChild(graph_img);
 
     // n時間前を表示する
-    //現在時刻の取得
-    const now = new Date();
+    // 現在時刻の取得し、ミリ秒に変換する
+    const date = new Date();
+    const now = new Date(date.getFullYear(),(date.getMonth()+1),date.getDate(),date.getHours(),date.getMinutes(),date.getSeconds());
     now_sec = now.getTime();
-    console.log("現在ミリ秒"+now_sec);
-    let before = new Date(user.last_login);
-    let before_sec = before.getTime();
-    console.log("データベースのミリ秒"+before_sec);
-    let diff = parseInt(now_sec - before_sec); //変更
+
+    // データベースに保存されている日時を取得し、ミリ秒に変換する
+    const str = String(user.last_login);
+    const year = parseInt(str.substr(0,4));
+    const month = parseInt(str.substr(5,2));
+    const day = parseInt(str.substr(8,2));
+    const hour = parseInt(str.substr(11,2));
+    const min = parseInt(str.substr(14,2));
+    const sec = parseInt(str.substr(17,2));
+    const before = new Date(year,month,day,hour,min,sec);
+    const before_sec = before.getTime();
+
+    // 現在日時とデータベースの日時の差を取得し、時間に変換
+    let diff = parseInt(now_sec - before_sec);
     const diff_hour = parseInt(diff / (1000 * 60 * 60));
     if (diff_hour > 168) {
-      div_child[1].innerHTML = "1週間以上前";
+      div_child[1].innerHTML = "7日以上前";
     } else if (diff_hour > 24) {
       const diff_day = parseInt(diff_hour / 24);
       div_child[1].innerHTML = diff_day + "日前";
