@@ -23,11 +23,12 @@
     //セッションクリア（ログアウト）
     @session_destroy();
 
-    echo 'Logoutしました。';
     header("Location: ../../index.html");
 
   } catch (Exception $e) {
     echo $e->getMessage();
+    sleep(3);
+    header("Location: ../../index.html");
   }
     
 

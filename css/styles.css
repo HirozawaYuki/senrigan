@@ -36,16 +36,13 @@ body {
 }
 
 .image_color {
-  /* min-width: 40px; */
   height: 100%;
 }
 
 .user_name {
-  /* width: 400px; */
+  height: 100%;
   font-size: xx-large;
   text-align: center;
-  padding: 0px;
-  /* margin: 0px; */
 }
 
 .attend {
@@ -54,23 +51,20 @@ body {
 }
 
 .absent {
-  background-color: black;
+  background-color: #04012c;
   color: white;
 }
 
 .in_out {
-  /* height: 100%; */
+  height: 100%;
 }
 
 .in_image {
-  height: 50px;
   background-color: white;
 }
 
 .out_image {
-  height: 50px;
-  /* width: 50px; */
-  background-color: black;
+  background-color: #04012c;
 }
 
 .column {
@@ -86,133 +80,10 @@ body {
 }
 
 .graph_time {
-  max-width: 300px;
+  /* max-width: 300px; */
   padding: 0px 20px;
   margin: 0px;
 }
-
-/* .user_color {
-  width: 5%;
-  height: 53px;
-  border: solid 2px #fff;
-  margin-left: 5%;
-}
-
-.square_attendance {
-  width: 50%;
-  height: 50px;
-  background: white;
-  border: solid 2px #fff;
-  margin-top: -70px;
-  margin-left: 10%;
-  text-align: center;
-  font-size: xx-large;
-}
-
-
-.square_absent {
-  width: 50%;
-  height: 50px;
-  color: #fff;
-  background-color: #040144;
-  border: solid 2px #040144;
-  margin-top: -70px;
-  margin-left: 10%;
-  text-align: center;
-  font-size: xx-large;
-}
-
-#attendance {
-  width: 15%;
-  height: 50px;
-  background: white;
-  border: solid 2px #fff;
-  margin-top: -86px;
-  margin-left: 60%;
-  text-align: center;
-  font-size: xx-large;
-  background-image: url("./../img/in.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#absent {
-  width: 15%;
-  height: 50px;
-  background: #040144;
-  color: #fff;
-  border: solid 2px #040144;
-  margin-top: -86px;
-  margin-left: 60%;
-  text-align: center;
-  font-size: xx-large;
-  background-image: url("./../img/out.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
-#attend_button {
-  width: 16%;
-  height: 27px;
-  position: absolute;
-  background: white;
-  border: none;
-  
-  margin-top: -86px;
-  margin-left: 70.1%;
-  text-align: center;
-  font-size: xx-large;
-  white-space: normal;
-  background-image: url("./../img/attend_graph.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#absent_button {
-  width: 16%;
-  height: 27px;
-  position: absolute;
-  background: white;
-  border: none;
-  
-  margin-top: -86px;
-  margin-left: 70.1%;
-  text-align: center;
-  font-size: xx-large;
-  white-space: normal;
-  background-color: #040144;
-  background-image: url("./../img/absent_graph.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#log_attend_time {
-  width: 16%;
-  height: 26px;
-  background: white;
-  border: solid 2px #fff;
-  margin: 0px;
-  padding: 0px;
-  margin-top: -62px;
-  margin-left: 75%;
-  text-align: center;
-  font-size: large;
-}
-
-#log_absent_time{
-  width: 16%;
-  height: 26px;
-  color: white;
-  background: #040144;
-  border: solid 2px #040144;
-  margin: 0px;
-  padding: 0px;
-  margin-top: -62px;
-  margin-left: 75%;
-  text-align: center;
-  font-size: large;
-} */
 
 .logout {
   width: 45%;

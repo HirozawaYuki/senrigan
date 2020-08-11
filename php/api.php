@@ -49,7 +49,6 @@
       case "login_user":
         $stmt = exeSQL("SELECT * FROM user_table WHERE name = '".$_SESSION["name"]."'");
         break;
-
       case "umbrella":
         $stmt = exeSQL("SELECT * FROM weather_table");
         break;

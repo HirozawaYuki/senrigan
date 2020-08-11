@@ -17,7 +17,7 @@ function showUsers(users) {
     const li = document.createElement("li");
     li.classList.add("flex");
     li.classList.add("user_list");
-    li.classList.add("row"); //
+    li.classList.add("row");
     ul.appendChild(li);
     /**
      * 現在のHTMLの状態
@@ -69,7 +69,7 @@ function showUsers(users) {
       img.classList.add("out_image");
       img.setAttribute("src", "../img/out.png");
       img.setAttribute("alt", "OUTの画像です");
-      div[2].setAttribute("style", "background-color: black");
+      div[2].setAttribute("style", "background-color: #04012c");
     }
     div[2].appendChild(img);
 
@@ -80,7 +80,7 @@ function showUsers(users) {
     if (user.attend == 1) {
       div[3].setAttribute("style", "background-color: white");
     } else if (user.attend == 0) {
-      div[3].setAttribute("style", "background-color: black");
+      div[3].setAttribute("style", "background-color: #04012c");
     }
 
     // グラフと時間を表示するためのdivタグを作成
@@ -118,9 +118,11 @@ function showUsers(users) {
     //現在時刻の取得
     const now = new Date();
     now_sec = now.getTime();
+    console.log("現在ミリ秒"+now_sec);
     let before = new Date(user.last_login);
     let before_sec = before.getTime();
-    let diff = now_sec - before_sec;
+    console.log("データベースのミリ秒"+before_sec);
+    let diff = parseInt(now_sec - before_sec); //変更
     const diff_hour = parseInt(diff / (1000 * 60 * 60));
     if (diff_hour > 168) {
       div_child[1].innerHTML = "1週間以上前";
@@ -133,7 +135,7 @@ function showUsers(users) {
 
     div_child[1].classList.add("text-center");
     if (user.attend == 1){
-      div_child[1].setAttribute("style","color: black");
+      div_child[1].setAttribute("style","color: #04012c");
     } else if (user.attend == 0){
       div_child[1].setAttribute("style","color: white");
     }
