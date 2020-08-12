@@ -4,6 +4,43 @@ body {
   background: #b8b2ea;
 }
 
+#parasol_image {
+  margin-left: 90%;
+  width: 10%;
+  height: 10%;
+}
+
+.graph {
+  width: 100%;
+  opacity: 0.5;
+  /* position: absolute; */
+  /* bottom: 0; */
+  pointer-events: none;
+  transform:rotateX(180deg);
+}
+
+/* エラーメッセージに関するクラス */
+
+.error {
+  color: #ff0000;
+}
+
+/*Transform-box:fill-box*/
+.Header__shape {
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+}
+
+.myRect {
+  animation-name: change-height;
+}
+
+@keyframes change-height {
+  0% {
+    height: 0%;
+  }
+}
+
 #flex_container {
   display: flex;
   flex-direction: row;
@@ -135,6 +172,7 @@ ul {
   color: #000; /* ヘッダーのフォントの色を指定する */
   border-bottom: 3px solid #c3c1dd; /* ヘッダーの境界線（下部）を指定する */
   box-shadow: 0 7px 10px 2px #aaaaaa; /* 影を指定（[右][下][ぼかし][広がり][影の色]） */
+  cursor: pointer;
 }
 
 .system_name {

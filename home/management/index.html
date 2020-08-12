@@ -15,17 +15,21 @@
 
   <body>
     <div class="Header">
-      <img class="system_name" src="../../img/Senrigan.png" />
+      <img
+        class="system_name"
+        src="../../img/Senrigan.png"
+        onclick="location.href='../'"
+      />
     </div>
-    <h1 class="lab_name" color="white">ユーザー設定</h1>
+    <div class="text-center mt-5 mb-5">
+      <h2>ユーザー設定</h2>
+    </div>
 
     <div class="container">
       <form
         action="php/update.php"
         class="form-check"
         method="POST"
-        name="form1"
-        onsubmit="return Check()"
       >
         <div class="form-group">
           <label for="name" class="col-form-label">名前</label>

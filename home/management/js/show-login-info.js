@@ -20,5 +20,7 @@ function showLoginInfo(users) {
 
   // ログインユーザーが設定している通知ユーザーにチェックを入れる
   const notice_user = document.getElementById(user.notice_id);
+  console.log(notice_user);
+  console.log(user.notice_id);
   notice_user.checked = true;
 }
